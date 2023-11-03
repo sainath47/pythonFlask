@@ -15,6 +15,11 @@ from sqlalchemy.sql import text
 app = Flask(__name__)
 CORS(app)
 
+
+account_sid = 'ACd385449272c77d3c5442bc12caa32c5e'
+auth_token = 'cee34d164876e14591b7931c6bc650f0'
+client = Client(account_sid, auth_token)
+
 db_config = {
     'host': 'api.portfolioone.io',
     'port': 3306,
@@ -57,6 +62,9 @@ def token_required(f):
         return f(*args, **kwargs)
 
     return decorated
+
+
+
 
 @app.errorhandler(Exception)
 def handle__error(e):
@@ -320,9 +328,6 @@ def send_otp():
         #     body=message
         # )
 
-        account_sid = 'ACd385449272c77d3c5442bc12caa32c5e'
-        auth_token = 'cee34d164876e14591b7931c6bc650f0'
-        client = Client(account_sid, auth_token)
 
         # return jsonify(mobile_number)
 
@@ -390,9 +395,7 @@ def forgotPasswordSendOTP():
         #     body=message
         # )
 
-        account_sid = 'ACd385449272c77d3c5442bc12caa32c5e'
-        auth_token = 'cee34d164876e14591b7931c6bc650f0'
-        client = Client(account_sid, auth_token)
+   
 
         # return jsonify(mobile_number)
 
@@ -508,4 +511,4 @@ def reset_password():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0') 

@@ -10,6 +10,7 @@ import random
 import datetime
 import jwt
 from functools import wraps
+import traceback 
 
 
 
@@ -220,12 +221,16 @@ def validateUser():
 
 @app.route('/api/RegisterUser', methods=['POST'])
 def RegisterUser():
+    connection = None
+    cursor = None  # Initialize cursor to None
+
     try:
         data = request.get_json()
+
         name = data['fullname']
         email = data['email']
         mobile = data['mobile']
-        password = data['password']
+        password = data['password']  # Plain text password
         organisation = data['organisation']
 
         # Create a database connection
@@ -245,18 +250,29 @@ def RegisterUser():
             return jsonify(result)
 
         cursor = connection.cursor(dictionary=True)
-        query = "SELECT * FROM user_details WHERE email=%s OR mobile=%s"
-        cursor.execute(query, (email, mobile))
-        existing_user = cursor.fetchone()
 
-        if existing_user:
+        # Check if the user already exists by email
+        query_email = "SELECT * FROM user_details WHERE email=%s"
+        cursor.execute(query_email, (email,))
+        existing_user_email = cursor.fetchone()
+
+        # Check if the user already exists by mobile
+        query_mobile = "SELECT * FROM user_details WHERE mobile=%s"
+        cursor.execute(query_mobile, (mobile,))
+        existing_user_mobile = cursor.fetchone()
+
+        if existing_user_email or existing_user_mobile:
             result = {
                 'status': 400,
                 'Message': 'User already exists'
             }
         else:
+            # Create a salt and hash the password
+            salt = bcrypt.gensalt()
+            hashed_password = bcrypt.hashpw(password.encode('utf-8'), salt)
+
             insert_query = "INSERT INTO user_details (fullname, email, mobile, password, organisation) VALUES (%s, %s, %s, %s, %s)"
-            insert_data = (name, email, mobile, password, organisation)
+            insert_data = (name, email, mobile, hashed_password, organisation)  # Store the hashed password
             cursor.execute(insert_query, insert_data)
             connection.commit()
 
@@ -271,11 +287,12 @@ def RegisterUser():
             'Message': str(e)
         }
     finally:
-        cursor.close()
-        connection.close()
+        if cursor is not None:  # Check if cursor is not None before closing it
+            cursor.close()
+        if connection is not None:  # Check if connection is not None before closing it
+            connection.close()
 
     return jsonify(result)
-
 
 
 
@@ -487,17 +504,28 @@ def deleteLeaseData(lease_id):
 
 
 # Flask-Mail configuration
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 465  # Use the appropriate port (587 for TLS)
-app.config['MAIL_USE_TLS'] = False
-app.config['MAIL_USE_SSL'] = True   
-app.config['MAIL_USERNAME'] = 'reddysainath47@gmail.com'
-app.config['MAIL_PASSWORD'] = 'jxyhiqscawrnbntw'  # Replace with your email password
-app.config['MAIL_DEFAULT_SENDER'] = 'reddysainath47@gmail.com'
+app.config['MAIL_SERVER'] = 'smtp.office365.com'
+app.config['MAIL_PORT'] = 587  # Use 587 for TLS or 465 for SSL
+app.config['MAIL_USE_TLS'] = True  # Enable TLS
+app.config['MAIL_USE_SSL'] = False  # Disable SSL
+app.config['MAIL_USERNAME'] = 'no-reply@portfolioone.io'
+app.config['MAIL_PASSWORD'] = 'Kox02665'
+app.config['MAIL_DEFAULT_SENDER'] = 'no-reply@portfolioone.io'
+
+# app.config['MAIL_DEBUG'] = True
+
+# app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+# app.config['MAIL_PORT'] = 465  # Use the appropriate port (587 for TLS)
+# app.config['MAIL_USE_TLS'] = False
+# app.config['MAIL_USE_SSL'] = True   
+# app.config['MAIL_USERNAME'] = 'reddysainath47@gmail.com'
+# app.config['MAIL_PASSWORD'] = 'jxyhiqscawrnbntw'  # Replace with your email password
+# app.config['MAIL_DEFAULT_SENDER'] = 'reddysainath47@gmail.com'
+
+
 
 
 mail = Mail(app)
-
 
 @app.route('/api/send-otp', methods=['POST'])
 def send_otp():
@@ -507,7 +535,7 @@ def send_otp():
         email = data['email']
         mobile_number = data['mobile_number']
 
-        # Check if  email is provided
+        # Check if email is provided
         if not mobile_number or not email:
             response = {
                 'status': 400,
@@ -543,7 +571,7 @@ def send_otp():
                 'status': 400,
                 'message': 'User already registered with the given email or mobile number.'
             }
-            return jsonify(response)
+            return jsonify(response), 400
 
         # Generate a random 4-digit OTP
         otp = ''.join(random.choice('0123456789') for i in range(4))
@@ -555,19 +583,6 @@ def send_otp():
         # Send the email
         mail.send(msg)
 
-
-        # Send the OTP to the mobile number (Twilio SMS)
-        # message = f'Your OTP is: {otp}'
-        # account_sid = 'ACd385449272c77d3c5442bc12caa32c5e'
-        # auth_token = 'cee34d164876e14591b7931c6bc650f0'
-        # client = Client(account_sid, auth_token)
-
-        # client.messages.create(
-        #     to=f'+91{mobile_number}',
-        #     from_='+12512208257',
-        #     body=message
-        # )
-
         response = {
             'status': 200,
             'message': 'OTP sent successfully',
@@ -577,6 +592,7 @@ def send_otp():
         return jsonify(response)
 
     except Exception as e:
+        traceback.print_exc()  # Print the full error traceback
         return jsonify({'error': str(e)}), 500
 
 
@@ -603,7 +619,7 @@ def forgotPasswordSendOTP():
                 'status': 400,
                 'message': 'Email is required.'
             }
-            return jsonify(response)
+            return jsonify(response), 400
 
         # Create a database connection
         connection = mysql.connector.connect(
@@ -633,7 +649,7 @@ def forgotPasswordSendOTP():
                 'status': 400,
                 'message': 'User not registered, please sign up.'
             }
-            return jsonify(response)
+            return jsonify(response), 400
 
         # Generate a random 4-digit OTP
         otp = ''.join(random.choice('0123456789') for i in range(4))
@@ -694,7 +710,7 @@ def reset_password():
                 'status': 400,
                 'message': 'Email, OTP, and new password are required.'
             }
-            return jsonify(response)
+            return jsonify(response), 400
 
         # Create a database connection
         connection = mysql.connector.connect(

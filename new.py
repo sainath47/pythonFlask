@@ -55,8 +55,10 @@ def token_required(f):
 
     return decorated
 
-@app.route('/RegisterUser', methods=['POST'])
+@app.route('/api/RegisterUser', methods=['POST'])
 def RegisterUser():
+    cursor = None  # Define the cursor outside the try block
+
     try:
         data = request.get_json()
         name = data['fullname']
@@ -103,10 +105,12 @@ def RegisterUser():
             'Message': str(e)
         }
     finally:
-        cursor.close()
-        # Do not close the connection here
+        if cursor is not None:  # Check if cursor is defined
+            cursor.close()
 
     return jsonify(result)
+
+
 
 @app.route('/validateUser', methods=['POST'])
 def validateUser():

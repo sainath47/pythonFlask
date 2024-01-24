@@ -3,18 +3,18 @@
 from app import db
 
 class User(db.Model):
-    __tablename__ = 'users'
+    __tablename__ = 'user'
 
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-    
-    # Make 'age' and 'occupation' optional with default values of None
-    age = db.Column(db.Integer, default=None)
-    occupation = db.Column(db.String(120), default=None)
+    user_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    fullname = db.Column(db.String(500), nullable=False)
+    email = db.Column(db.String(255), nullable=False, unique=True)
+    mobile = db.Column(db.String(45), nullable=True)  # Adjust as needed
+    password = db.Column(db.String(255), nullable=False)
+    organisation = db.Column(db.String(255), nullable=True)  # Adjust as needed
 
-    def __init__(self, username, email, age=None, occupation=None):
-        self.username = username
+    def __init__(self, fullname, email, password, mobile=None, organisation=None):
+        self.fullname = fullname
         self.email = email
-        self.age = age
-        self.occupation = occupation
+        self.mobile = mobile
+        self.password = password
+        self.organisation = organisation

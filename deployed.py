@@ -267,7 +267,7 @@ def validateUser():
             end_date = subscription_data['end_date']
             current_date = datetime.datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
             
-            if end_date and end_date < current_date:
+            if end_date and end_date < datetime.datetime.strptime(current_date, '%Y-%m-%d %H:%M:%S'):
                 result = {
                     'status': 200,
                     'data': {

@@ -1061,12 +1061,19 @@ def check_email_verification():
 
         query_check_email = "SELECT is_email_verified FROM user_details WHERE email = %s"
         cursor.execute(query_check_email, (email_to_check,))
-        existing_email = cursor.fetchone()['is_email_verified']
+        checkEmail = cursor.fetchone()
+        existing_email = None
+        if checkEmail:
+          existing_email = checkEmail['is_email_verified']
+        else:
+          return jsonify({'Message': 'Email not found in our records','status': 404})
+        
+        
         print('existing_email', existing_email)
         if not existing_email:
-            return jsonify({'Message': 'Email not found in our records','status': 404})
+            return jsonify({'Message': 'Email found in our records but unverified','status': 404})
         else:
-            return jsonify({'Message': 'Email found in our records', 'status': 200})
+            return jsonify({'Message': 'Email found in our records & verified', 'status': 200})
 
 
     except Exception as e:

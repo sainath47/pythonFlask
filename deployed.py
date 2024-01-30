@@ -15,6 +15,8 @@ import traceback
 import pandas as pd
 import uuid
 import os
+from mysql.connector import Error
+
 
 
 
@@ -282,6 +284,22 @@ def validateUser():
                     # 'Message': 'User subscription has expired'
                     "Message": "User found",
                 }
+            elif not end_date:
+                result = {
+                    'status': 200,
+                    'data': {
+                        'email': user_data['email'],
+                        'fullname': user_data['fullname'],
+                        'mobile': user_data['mobile'],
+                        'organisation': user_data['organisation'],
+                        'user_id': user_data['user_id'],
+                        'is_email_verified': user_data['is_email_verified'],
+                        'subscribed': False
+                    },
+                    # 'Message': 'User just clicked on button of pypal subscription, never completed the payment'
+                    "Message": "User found",
+                }
+              
             else:
                 result = {
                     'status': 200,
@@ -409,6 +427,14 @@ def RegisterUser():
             insert_query = "INSERT INTO user_details (fullname, email, mobile, password, organisation) VALUES (%s, %s, %s, %s, %s)"
             insert_data = (name, email, mobile, password, organisation)  # Store the hashed password
             cursor.execute(insert_query, insert_data)
+                    # Get the user_id of the newly inserted user
+            user_id = cursor.lastrowid
+
+            # Insert into user_headcount with default values
+            insert_headcount_query = "INSERT INTO user_headcount (user_id) VALUES (%s)"
+            cursor.execute(insert_headcount_query, (user_id,))
+
+
             connection.commit()
             
             # Generate token with no expiry containing the email for email verification
@@ -1510,6 +1536,7 @@ def create_subscription(user_action="SUBSCRIBE_NOW"):
     data = {"plan_id": PLAN_ID, "application_context": {"user_action": user_action}}
     response = requests.post(url, headers=headers, json=data)
     return response.json(), response.status_code
+  
 def handle_response(response):
     try:
         json_response = response.json()
@@ -1521,12 +1548,30 @@ def handle_response(response):
 @app.route("/api/paypal/create-subscription", methods=["POST"])
 def create_subscription_endpoint():
     """Endpoint for creating a subscription."""
+
     try:
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor()
+        # user_id = g.user['user_id']
+        user_id = 99
+        
         json_response, http_status_code = create_subscription()
+        print(json_response['id'])
+        subscription_id =json_response['id']
+        if subscription_id:
+          delete_query = "DELETE FROM subscriptions WHERE user_id = %s"
+          cursor.execute(delete_query, (user_id,))
+          insert_query = "INSERT INTO subscriptions (user_id, subscription_id) VALUES (%s, %s)"
+          cursor.execute(insert_query, (user_id, subscription_id))
+          connection.commit()
         return jsonify(json_response), http_status_code
     except Exception as e:
         print("Failed to create order:", e)
         return jsonify({"error": "Failed to create order."}), 500
+    finally:
+      cursor.close()
+      connection.close()
+    
 
 @app.route("/api/webhook/paypal", methods=["POST"])
 def paypal_webhook():
@@ -1549,40 +1594,8 @@ def handle_webhook_event(event):
         )
         cursor = connection.cursor(dictionary=True)
 
-        if event_type == "BILLING.SUBSCRIPTION.ACTIVATED":
-            subscription_id = resource["id"]
-            email = resource["subscriber"]["email_address"]
-
-            # Get user_id from user_details based on email
-            user_id_query = "SELECT user_id FROM user_details WHERE email = %s"
-            cursor.execute(user_id_query, (email,))
-            user_id_result = cursor.fetchone()
-
-            if user_id_result:
-                user_id = user_id_result["user_id"]
-                # Check if the subscription already exists
-                subscription_query = "SELECT * FROM subscriptions WHERE subscription_id = %s"
-                cursor.execute(subscription_query, (subscription_id,))
-                existing_subscription = cursor.fetchone()
-
-                if existing_subscription:
-                    # If the subscription exists, update the end_date if start_date is the same
-                    if existing_subscription["start_date"] == resource["create_time"]:
-                        update_query = "UPDATE subscriptions SET end_date = NOW() + INTERVAL 30 DAY WHERE subscription_id = %s"
-                        cursor.execute(update_query, (subscription_id,))
-                else:
-                    # If the subscription does not exist, insert into subscriptions
-                    insert_query = "INSERT INTO subscriptions (user_id, subscription_id, start_date, end_date) VALUES (%s, %s, NOW(), NOW() + INTERVAL 30 DAY)"
-                    cursor.execute(insert_query, (user_id, subscription_id))
-                connection.commit()
-            else:
-                print("User not found for email:", email)
-
-        elif event_type == "PAYMENT.SALE.COMPLETED":
+        if event_type == "PAYMENT.SALE.COMPLETED":
             subscription_id = resource["billing_agreement_id"]
-
-            # Set user_id to NULL since there is no subscriber information
-            user_id = None
 
             # Check if the subscription already exists
             subscription_query = "SELECT * FROM subscriptions WHERE subscription_id = %s"
@@ -1598,11 +1611,6 @@ def handle_webhook_event(event):
                   update_query = "UPDATE subscriptions SET start_date = NOW(), end_date = NOW() + INTERVAL 30 DAY WHERE subscription_id = %s"
                   cursor.execute(update_query, (subscription_id,))               
 
-            else:
-                # If the subscription does not exist, insert into subscriptions
-                insert_query = "INSERT INTO subscriptions (user_id, subscription_id, start_date, end_date) VALUES (%s, %s, NOW(), NOW() + INTERVAL 30 DAY)"
-                cursor.execute(insert_query, (user_id, subscription_id))
-            connection.commit()
 
         else:
             print("Ignoring non-subscription event:", event_type)
@@ -1612,11 +1620,12 @@ def handle_webhook_event(event):
     finally:
         cursor.close()
         connection.close()
-        
-        
-        
+     
+     
+
 # API to update role permissions
 @app.route('/api/updateRolePermissions', methods=['POST'])
+@token_required
 def updateRolePermissions():
     try:
         connection = mysql.connector.connect(**db_config)
@@ -1656,8 +1665,13 @@ def updateRolePermissions():
         cursor.close()
         connection.close()
 
+
+
+
+
 # API to get permissions
 @app.route('/api/getPermissions', methods=['GET'])
+@token_required
 def getPermissions():
     try:
         connection = mysql.connector.connect(**db_config)
@@ -1679,8 +1693,10 @@ def getPermissions():
         cursor.close()
         connection.close()
 
+        
 # API to get roles
 @app.route('/api/getRoles', methods=['GET'])
+@token_required
 def getRoles():
     try:
         connection = mysql.connector.connect(**db_config)
@@ -1701,6 +1717,110 @@ def getRoles():
     finally:
         cursor.close()
         connection.close()
+
+
+# Function to fetch permissions based on org_id
+@app.route('/api/getPermissionsByOrgId/<int:org_id>', methods=['GET'])
+@token_required
+def get_permissions_by_org_id(org_id):
+    try:
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor(dictionary=True)
+
+        # SQL query to fetch permissions based on org_id
+        query = "SELECT role_id, GROUP_CONCAT(permission_id) AS permission_ids FROM role_permissions WHERE org_id = %s GROUP BY role_id"
+        cursor.execute(query, (org_id,))
+        permissions = cursor.fetchall()
+
+        formatted_permissions = []
+        for permission in permissions:
+            formatted_permission = {
+                'org_id': org_id,
+                'role_id': permission['role_id'],
+                'permission_ids': [int(id) for id in permission['permission_ids'].split(',')]
+            }
+            formatted_permissions.append(formatted_permission)
+
+        return {'data': formatted_permissions, 'status': 200}
+
+    except Error as e:
+        return jsonify({'error': str(e)}), 500
+
+    finally:
+        if connection.is_connected():
+            cursor.close()
+            connection.close()
+
+
+
+@app.route('/api/updateUserHeadcount/<int:user_id>', methods=['PUT'])
+@token_required
+def update_user_headcount(user_id):
+    try:
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor()
+
+        data = request.get_json()
+        user_id = g.user['user_id']
+        headcount_values = data
+        
+        if g.user['user_id'] != user_id:
+          return jsonify({'msg': 'User is not authorized'})
+
+        # Update headcount values for the specified user
+        update_query = "UPDATE user_headcount SET headcount1 = %s, headcount2 = %s, headcount3 = %s, headcount4 = %s WHERE user_id = %s"
+        cursor.execute(update_query, (headcount_values['headcount1'], headcount_values['headcount2'], headcount_values['headcount3'], headcount_values['headcount4'], user_id))
+
+        connection.commit()
+
+        result = {
+            'status': 200,
+            'Message': 'User headcount updated successfully'
+        }
+        return jsonify(result)
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+    finally:
+        cursor.close()
+        connection.close()
+
+@app.route('/api/getUserHeadcount/<int:user_id>', methods=['GET'])
+@token_required
+def get_user_headcount(user_id):
+    try:
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor(dictionary=True)
+        if g.user['user_id'] != user_id:
+          return jsonify({'msg': 'User is not authorized'})
+
+        # Retrieve headcount values for the specified user
+        select_query = "SELECT * FROM user_headcount WHERE user_id = %s"
+        cursor.execute(select_query, (user_id,))
+        user_headcount = cursor.fetchone()
+
+
+        if user_headcount:
+            result = {
+                'status': 200,
+                'data': user_headcount,
+                'Message': 'User headcount retrieved successfully'
+            }
+        else:
+            result = {
+                'status': 404,
+                'data': {},
+                'Message': 'User headcount not found'
+            }
+
+        return jsonify(result)
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+    finally:
+        cursor.close()
+        connection.close()
+
 
 
 

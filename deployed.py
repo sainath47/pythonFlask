@@ -240,7 +240,7 @@ def validateUser():
         password = data['password']
 
         # SQL query to fetch data based on the provided email
-        query = f"SELECT email, fullname, mobile, organisation, user_id, is_email_verified FROM user_details WHERE email = '{username}' AND BINARY password = '{password}'"
+        query = f"SELECT email, fullname, mobile, organisation, user_id, is_email_verified FROM user_details WHERE email = '{username}' AND BINARY password = '{password}'AND is_deleted = FALSE"
         cursor.execute(query)
         user_data = cursor.fetchone()
 
@@ -832,7 +832,7 @@ def updateLeaseData(lease_id):
         cursor.execute(query_check, (lease_id,))
         existing_record = cursor.fetchone()
         # return jsonify(existing_record)
-        print(existing_record)
+        # print(existing_record)
 
         if not existing_record:
             result = {
@@ -1095,7 +1095,7 @@ def check_email_verification():
           return jsonify({'Message': 'Email not found in our records','status': 404})
         
         
-        print('existing_email', existing_email)
+        # print('existing_email', existing_email)
         if not existing_email:
             return jsonify({'Message': 'Email found in our records but unverified','status': 404})
         else:
@@ -1125,7 +1125,7 @@ def send_password_reset_email():
         query_check_email = "SELECT * FROM user_details WHERE email = %s"
         cursor.execute(query_check_email, (email,))
         existing_email = cursor.fetchone()
-        print(existing_email, "user existing")
+        # print(existing_email, "user existing")
         # return jsonify({'existing_email': existing_email['fullname']})
 
         cursor.close() 
@@ -1556,7 +1556,7 @@ def create_subscription_endpoint():
         user_id = 99
         
         json_response, http_status_code = create_subscription()
-        print(json_response['id'])
+        # print(json_response['id'])
         subscription_id =json_response['id']
         if subscription_id:
           delete_query = "DELETE FROM subscriptions WHERE user_id = %s"
@@ -1576,6 +1576,7 @@ def create_subscription_endpoint():
 @app.route("/api/webhook/paypal", methods=["POST"])
 def paypal_webhook():
     webhook_event = request.get_json()
+    print(webhook_event,"GOD KNOWS WHAT IS GOING ON")
     handle_webhook_event(webhook_event)
     return jsonify({"status": "Webhook received and processed"})
 
@@ -1593,8 +1594,12 @@ def handle_webhook_event(event):
             database=db_config['db']
         )
         cursor = connection.cursor(dictionary=True)
+        
+        print(event_type,"event_type")
+        print(event, "event")
 
         if event_type == "PAYMENT.SALE.COMPLETED":
+            print(event_type,"YAHOOOOOOOOOOO AN EVENT")
             subscription_id = resource["billing_agreement_id"]
 
             # Check if the subscription already exists
@@ -1664,9 +1669,6 @@ def updateRolePermissions():
     finally:
         cursor.close()
         connection.close()
-
-
-
 
 
 # API to get permissions
@@ -1821,7 +1823,96 @@ def get_user_headcount(user_id):
         cursor.close()
         connection.close()
 
+# API to add an organization
+@app.route('/api/addOrganization', methods=['POST'])
+@token_required
+def add_organization():
+    try:
+        # Establish connection to the database
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor()
 
+        # Get organization details from request body
+        data = request.get_json()
+        name = data.get('name')
+
+        # Execute SQL query to insert organization into the database
+        insert_query = "INSERT INTO organisation (name) VALUES (%s)"
+        cursor.execute(insert_query, (name,))
+
+        # Commit changes to the database
+        connection.commit()
+
+        return jsonify({'message': 'Organization added successfully'}), 200
+
+    except mysql.connector.IntegrityError as e:
+        if e.errno == 1062:  # MySQL error code for duplicate entry
+            return jsonify({'error': 'Organization name already exists'})
+        else:
+            return jsonify({'error': 'Database error: ' + str(e)}), 500
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+    finally:
+        # Close cursor and connection
+        if 'connection' in locals() and connection.is_connected():
+            cursor.close()
+            connection.close()
+
+# API to get all organizations
+@app.route('/api/getOrganizations', methods=['GET'])
+@token_required
+def get_organizations():
+    try:
+        # Establish connection to the database
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor(dictionary=True)
+
+        # Execute SQL query to fetch all organizations
+        select_query = "SELECT * FROM organisation"
+        cursor.execute(select_query)
+        organizations = cursor.fetchall()
+
+        return jsonify({'data': organizations}), 200
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+    finally:
+        # Close cursor and connection
+        if 'connection' in locals() and connection.is_connected():
+            cursor.close()
+            connection.close()
+
+
+
+
+@app.route('/api/deleteUser/<int:user_id>', methods=['PATCH'])
+def delete_user(user_id):
+    try:
+        # Establish connection to the database
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor(dictionary=True)
+        # Update the is_deleted flag for the user
+        update_query = "UPDATE user_details SET is_deleted = TRUE WHERE user_id = %s"
+        cursor.execute(update_query, (user_id,))
+
+        # Commit the changes
+        connection.commit()
+
+        # Return success message
+        return jsonify({'message': 'User deleted successfully'}), 200
+
+    except Exception as e:
+        # Rollback the transaction and return error message
+        connection.rollback()
+        return jsonify({'error': str(e)}), 500
+
+    finally:
+        # Close the cursor and connection
+        cursor.close()
+        connection.close()
 
 
 if __name__ == '__main__':

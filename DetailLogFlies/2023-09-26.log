@@ -1,0 +1,132 @@
+INFO:root:
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.0.0.5:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:root:
+INFO:root:mysql+pymysql://root:@127.0.0.1:3306/dfx
+INFO:root:mysql+pymysql://root:root@127.0.0.1:3306/dfx
+INFO:root:mysql+pymysql://root:@localhost:3306/dfx
+INFO:root:mysql+pymysql://root:@localhost:3306/dfx
+INFO:root:No module named 'pymysql'
+INFO:root:mysql+pymysql://root:@localhost:3306/dfx
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.0.0.5:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 689-079-598
+INFO:werkzeug:127.0.0.1 - - [26/Sep/2023 08:25:16] "GET /getAllLeaseData HTTP/1.1" 200 -
+ERROR:root:404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [26/Sep/2023 08:25:16] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Morelloa\\Documents\\DFX\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 689-079-598
+INFO:werkzeug:127.0.0.1 - - [26/Sep/2023 08:26:25] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:10.0.0.5 - - [26/Sep/2023 08:59:19] "GET /getAllLeaseData HTTP/1.1" 200 -
+ERROR:root:404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:10.0.0.5 - - [26/Sep/2023 08:59:19] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Morelloa\\Documents\\DFX\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 689-079-598
+INFO:werkzeug:10.0.0.5 - - [26/Sep/2023 08:59:42] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Morelloa\\Documents\\DFX\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 689-079-598
+INFO:werkzeug:10.0.0.5 - - [26/Sep/2023 08:59:55] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Morelloa\\Documents\\DFX\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@#@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 689-079-598
+INFO:werkzeug:10.0.0.5 - - [26/Sep/2023 12:05:32] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:Engine(mysql+pymysql://root:***@#@localhost:3306/dfx)
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.0.0.5:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@#@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 689-079-598
+INFO:werkzeug:127.0.0.1 - - [26/Sep/2023 12:06:17] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Morelloa\\Documents\\DFX\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@#@127.0.0.1:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 689-079-598
+INFO:werkzeug:127.0.0.1 - - [26/Sep/2023 12:07:35] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Morelloa\\Documents\\DFX\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@#@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 689-079-598
+INFO:werkzeug: * Detected change in 'C:\\Users\\Morelloa\\Documents\\DFX\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@portfolio1@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 689-079-598
+INFO:werkzeug:127.0.0.1 - - [26/Sep/2023 12:11:01] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Morelloa\\Documents\\DFX\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 689-079-598
+INFO:werkzeug:127.0.0.1 - - [26/Sep/2023 12:12:00] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Morelloa\\Documents\\DFX\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 689-079-598
+INFO:werkzeug:127.0.0.1 - - [26/Sep/2023 12:20:26] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Morelloa\\Documents\\DFX\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 689-079-598
+INFO:werkzeug: * Detected change in 'C:\\Users\\Morelloa\\Documents\\DFX\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 689-079-598
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [26/Sep/2023 12:21:03] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:10.0.0.5 - - [26/Sep/2023 12:21:31] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:No module named 'pymysql'
+INFO:werkzeug: * Detected change in 'C:\\Users\\Morelloa\\Documents\\DFX\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 689-079-598
+INFO:root:No module named 'pymysql'
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.0.0.5:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:root:No module named 'pymysql'
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 979-197-036
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:10.0.0.5 - - [26/Sep/2023 14:47:50] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:10.0.0.5 - - [26/Sep/2023 14:47:51] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Morelloa\\Documents\\DFX\\app.py', reloading
+INFO:werkzeug: * Restarting with stat

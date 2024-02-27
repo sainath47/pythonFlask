@@ -1,0 +1,23 @@
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 413-389-631
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2023 02:11:19] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2023 02:15:20] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2023 02:17:57] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2023 02:20:10] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2023 02:23:12] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2023 04:43:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2023 05:02:28] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2023 05:05:04] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2023 05:08:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2023 05:11:30] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2023 05:13:43] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2023 05:14:27] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2023 05:15:45] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2023 05:17:05] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2023 05:20:56] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2023 05:21:30] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2023 05:24:26] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2023 05:27:56] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2023 05:31:40] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\inetpub\\wwwroot\\portfolio\\main.py', reloading

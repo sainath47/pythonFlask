@@ -1,0 +1,62 @@
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 689-079-598
+INFO:root:No module named 'pymysql'
+INFO:root:No module named 'pymysql'
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.0.0.5:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 979-197-036
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.0.0.5:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 979-197-036
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.0.0.5:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 979-197-036
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.0.0.5:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 979-197-036
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.0.0.5:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 979-197-036
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:10.0.0.5 - - [27/Sep/2023 09:39:43] "GET /getAllLeaseData HTTP/1.1" 200 -
+ERROR:root:404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:10.0.0.5 - - [27/Sep/2023 09:39:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -

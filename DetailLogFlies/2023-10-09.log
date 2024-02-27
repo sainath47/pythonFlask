@@ -1,0 +1,147 @@
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 413-389-631
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 06:38:36] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 06:38:46] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 06:43:47] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 06:49:40] "OPTIONS /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 06:49:41] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 06:57:58] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 07:03:56] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 07:04:48] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 07:04:49] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:twilio.http_client:-- BEGIN Twilio API Request --
+INFO:twilio.http_client:POST Request: https://api.twilio.com/2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json
+INFO:twilio.http_client:Headers:
+INFO:twilio.http_client:User-Agent : twilio-python/8.9.1 (Windows AMD64) Python/3.11.5
+INFO:twilio.http_client:X-Twilio-Client : python-8.9.1
+INFO:twilio.http_client:Accept-Charset : utf-8
+INFO:twilio.http_client:Content-Type : application/x-www-form-urlencoded
+INFO:twilio.http_client:Accept : application/json
+INFO:twilio.http_client:-- END Twilio API Request --
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twilio.com:443
+DEBUG:urllib3.connectionpool:https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json HTTP/1.1" 400 156
+INFO:twilio.http_client:Response Status Code: 400
+INFO:twilio.http_client:Response Headers: {'Date': 'Mon, 09 Oct 2023 07:05:50 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '156', 'Connection': 'keep-alive', 'Twilio-Request-Id': 'RQ1d2696535c8a3c5d21464525898f5f2b', 'Twilio-Request-Duration': '0.052', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'Strict-Transport-Security': 'max-age=31536000', 'Twilio-Concurrent-Requests': '1', 'X-Shenanigans': 'none', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 07:05:50] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 07:06:28] "POST /send-otp HTTP/1.1" 200 -
+INFO:twilio.http_client:-- BEGIN Twilio API Request --
+INFO:twilio.http_client:POST Request: https://api.twilio.com/2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json
+INFO:twilio.http_client:Headers:
+INFO:twilio.http_client:User-Agent : twilio-python/8.9.1 (Windows AMD64) Python/3.11.5
+INFO:twilio.http_client:X-Twilio-Client : python-8.9.1
+INFO:twilio.http_client:Accept-Charset : utf-8
+INFO:twilio.http_client:Content-Type : application/x-www-form-urlencoded
+INFO:twilio.http_client:Accept : application/json
+INFO:twilio.http_client:-- END Twilio API Request --
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twilio.com:443
+DEBUG:urllib3.connectionpool:https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json HTTP/1.1" 400 156
+INFO:twilio.http_client:Response Status Code: 400
+INFO:twilio.http_client:Response Headers: {'Date': 'Mon, 09 Oct 2023 07:06:44 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '156', 'Connection': 'keep-alive', 'Twilio-Request-Id': 'RQe19e6532e171fe53dc4e4eef19c055ea', 'Twilio-Request-Duration': '0.051', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'Strict-Transport-Security': 'max-age=31536000', 'Twilio-Concurrent-Requests': '1', 'X-Shenanigans': 'none', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 07:06:44] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 07:34:23] "OPTIONS /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 07:34:24] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 07:35:41] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 07:43:31] "OPTIONS /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 07:43:32] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 07:47:43] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 07:48:40] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 08:21:59] "OPTIONS /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 08:22:00] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 08:22:58] "OPTIONS /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 08:22:59] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 08:29:23] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 08:30:39] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 08:32:00] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 08:34:59] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 08:38:12] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 08:38:40] "OPTIONS /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 08:38:41] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 08:40:43] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 08:49:26] "OPTIONS /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 08:49:27] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 09:31:10] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 09:38:35] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 10:00:07] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 10:05:15] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 10:07:03] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 10:46:33] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 10:48:49] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 10:49:54] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 10:54:20] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 10:55:44] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 11:00:44] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 11:01:35] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 11:05:05] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 11:06:12] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 11:11:05] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 11:12:56] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 11:15:42] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 11:20:08] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 11:24:46] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 11:26:22] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 11:27:49] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 11:30:30] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 11:31:11] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 11:39:07] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 11:41:00] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 11:42:43] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 11:43:39] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 11:44:31] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 11:45:47] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 11:46:27] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 11:47:05] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 12:10:20] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 12:13:50] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 12:13:51] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 12:15:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 12:22:11] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 12:27:12] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 12:28:15] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 12:29:51] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2023 12:31:25] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 03:58:58] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 03:59:26] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 04:00:34] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 04:08:38] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 04:11:10] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 04:12:18] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 04:39:06] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 05:17:05] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 05:20:28] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 05:22:25] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 05:26:11] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 05:27:26] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 05:28:43] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 05:30:12] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 05:32:44] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 05:33:34] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 05:48:00] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 05:48:56] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 05:51:02] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 05:51:41] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 05:54:36] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 06:01:38] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 06:02:39] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 06:03:56] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 06:04:52] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 06:06:00] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 06:09:18] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 06:10:08] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 06:12:31] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 06:13:27] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 06:13:54] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 06:14:40] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 08:20:17] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 08:52:46] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 10:03:02] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 10:03:52] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 10:10:29] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 10:11:26] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 10:12:15] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 10:12:58] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 10:14:12] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 10:14:49] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 10:59:01] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2023 11:00:32] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\inetpub\\wwwroot\\portfolio\\main.py', reloading

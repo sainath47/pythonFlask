@@ -1,0 +1,124 @@
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 413-389-631
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.0.0.5:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 413-389-631
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 05:15:22] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 05:17:22] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 08:38:46] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 08:38:57] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 08:39:30] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 08:40:00] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 08:40:28] "POST /reset-password HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 08:44:25] "POST /reset-password HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 10:03:55] "POST /reset-password HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 10:05:02] "POST /reset-password HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 10:07:36] "POST /send-otp HTTP/1.1" 200 -
+INFO:twilio.http_client:-- BEGIN Twilio API Request --
+INFO:twilio.http_client:POST Request: https://api.twilio.com/2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json
+INFO:twilio.http_client:Headers:
+INFO:twilio.http_client:User-Agent : twilio-python/8.9.1 (Windows AMD64) Python/3.11.5
+INFO:twilio.http_client:X-Twilio-Client : python-8.9.1
+INFO:twilio.http_client:Accept-Charset : utf-8
+INFO:twilio.http_client:Content-Type : application/x-www-form-urlencoded
+INFO:twilio.http_client:Accept : application/json
+INFO:twilio.http_client:-- END Twilio API Request --
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twilio.com:443
+DEBUG:urllib3.connectionpool:https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json HTTP/1.1" 401 107
+INFO:twilio.http_client:Response Status Code: 401
+INFO:twilio.http_client:Response Headers: {'Date': 'Tue, 17 Oct 2023 10:08:27 GMT', 'Content-Type': 'application/json', 'Content-Length': '107', 'Connection': 'keep-alive', 'WWW-Authenticate': 'Basic realm="Twilio API"', 'Twilio-Request-Id': 'RQ426562d0f49ede90747995a0d2a2fd0b', 'X-Shenanigans': 'none', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 10:08:27] "POST /forgot-password-send-otp HTTP/1.1" 200 -
+INFO:twilio.http_client:-- BEGIN Twilio API Request --
+INFO:twilio.http_client:POST Request: https://api.twilio.com/2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json
+INFO:twilio.http_client:Headers:
+INFO:twilio.http_client:User-Agent : twilio-python/8.9.1 (Windows AMD64) Python/3.11.5
+INFO:twilio.http_client:X-Twilio-Client : python-8.9.1
+INFO:twilio.http_client:Accept-Charset : utf-8
+INFO:twilio.http_client:Content-Type : application/x-www-form-urlencoded
+INFO:twilio.http_client:Accept : application/json
+INFO:twilio.http_client:-- END Twilio API Request --
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twilio.com:443
+DEBUG:urllib3.connectionpool:https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json HTTP/1.1" 401 107
+INFO:twilio.http_client:Response Status Code: 401
+INFO:twilio.http_client:Response Headers: {'Date': 'Tue, 17 Oct 2023 10:09:07 GMT', 'Content-Type': 'application/json', 'Content-Length': '107', 'Connection': 'keep-alive', 'WWW-Authenticate': 'Basic realm="Twilio API"', 'Twilio-Request-Id': 'RQ741679355d37778c7b88d743ac57924e', 'X-Shenanigans': 'none', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 10:09:07] "POST /forgot-password-send-otp HTTP/1.1" 200 -
+INFO:twilio.http_client:-- BEGIN Twilio API Request --
+INFO:twilio.http_client:POST Request: https://api.twilio.com/2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json
+INFO:twilio.http_client:Headers:
+INFO:twilio.http_client:User-Agent : twilio-python/8.9.1 (Windows AMD64) Python/3.11.5
+INFO:twilio.http_client:X-Twilio-Client : python-8.9.1
+INFO:twilio.http_client:Accept-Charset : utf-8
+INFO:twilio.http_client:Content-Type : application/x-www-form-urlencoded
+INFO:twilio.http_client:Accept : application/json
+INFO:twilio.http_client:-- END Twilio API Request --
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twilio.com:443
+DEBUG:urllib3.connectionpool:https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json HTTP/1.1" 401 107
+INFO:twilio.http_client:Response Status Code: 401
+INFO:twilio.http_client:Response Headers: {'Date': 'Tue, 17 Oct 2023 10:10:17 GMT', 'Content-Type': 'application/json', 'Content-Length': '107', 'Connection': 'keep-alive', 'WWW-Authenticate': 'Basic realm="Twilio API"', 'Twilio-Request-Id': 'RQ7f29a606309da57271071e46220e466b', 'X-Shenanigans': 'none', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 10:10:17] "POST /forgot-password-send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 10:11:34] "POST /reset-password HTTP/1.1" 200 -
+INFO:twilio.http_client:-- BEGIN Twilio API Request --
+INFO:twilio.http_client:POST Request: https://api.twilio.com/2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json
+INFO:twilio.http_client:Headers:
+INFO:twilio.http_client:User-Agent : twilio-python/8.9.1 (Windows AMD64) Python/3.11.5
+INFO:twilio.http_client:X-Twilio-Client : python-8.9.1
+INFO:twilio.http_client:Accept-Charset : utf-8
+INFO:twilio.http_client:Content-Type : application/x-www-form-urlencoded
+INFO:twilio.http_client:Accept : application/json
+INFO:twilio.http_client:-- END Twilio API Request --
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twilio.com:443
+DEBUG:urllib3.connectionpool:https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json HTTP/1.1" 401 107
+INFO:twilio.http_client:Response Status Code: 401
+INFO:twilio.http_client:Response Headers: {'Date': 'Tue, 17 Oct 2023 10:12:00 GMT', 'Content-Type': 'application/json', 'Content-Length': '107', 'Connection': 'keep-alive', 'WWW-Authenticate': 'Basic realm="Twilio API"', 'Twilio-Request-Id': 'RQb39c3b07d173f2bf3dc57d24f9055a50', 'X-Shenanigans': 'none', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 10:12:00] "POST /forgot-password-send-otp HTTP/1.1" 200 -
+INFO:twilio.http_client:-- BEGIN Twilio API Request --
+INFO:twilio.http_client:POST Request: https://api.twilio.com/2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json
+INFO:twilio.http_client:Headers:
+INFO:twilio.http_client:User-Agent : twilio-python/8.9.1 (Windows AMD64) Python/3.11.5
+INFO:twilio.http_client:X-Twilio-Client : python-8.9.1
+INFO:twilio.http_client:Accept-Charset : utf-8
+INFO:twilio.http_client:Content-Type : application/x-www-form-urlencoded
+INFO:twilio.http_client:Accept : application/json
+INFO:twilio.http_client:-- END Twilio API Request --
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twilio.com:443
+DEBUG:urllib3.connectionpool:https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json HTTP/1.1" 401 107
+INFO:twilio.http_client:Response Status Code: 401
+INFO:twilio.http_client:Response Headers: {'Date': 'Tue, 17 Oct 2023 10:14:47 GMT', 'Content-Type': 'application/json', 'Content-Length': '107', 'Connection': 'keep-alive', 'WWW-Authenticate': 'Basic realm="Twilio API"', 'Twilio-Request-Id': 'RQ4ceddf3eb31043c8e9323476b7a9d3a9', 'X-Shenanigans': 'none', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 10:14:47] "POST /forgot-password-send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 10:27:09] "POST /send-otp HTTP/1.1" 200 -
+INFO:twilio.http_client:-- BEGIN Twilio API Request --
+INFO:twilio.http_client:POST Request: https://api.twilio.com/2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json
+INFO:twilio.http_client:Headers:
+INFO:twilio.http_client:User-Agent : twilio-python/8.9.1 (Windows AMD64) Python/3.11.5
+INFO:twilio.http_client:X-Twilio-Client : python-8.9.1
+INFO:twilio.http_client:Accept-Charset : utf-8
+INFO:twilio.http_client:Content-Type : application/x-www-form-urlencoded
+INFO:twilio.http_client:Accept : application/json
+INFO:twilio.http_client:-- END Twilio API Request --
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twilio.com:443
+DEBUG:urllib3.connectionpool:https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json HTTP/1.1" 401 107
+INFO:twilio.http_client:Response Status Code: 401
+INFO:twilio.http_client:Response Headers: {'Date': 'Tue, 17 Oct 2023 10:27:38 GMT', 'Content-Type': 'application/json', 'Content-Length': '107', 'Connection': 'keep-alive', 'WWW-Authenticate': 'Basic realm="Twilio API"', 'Twilio-Request-Id': 'RQ193d850bd4cf9a98a212cef95e4b9e1d', 'X-Shenanigans': 'none', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 10:27:38] "POST /forgot-password-send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 10:28:09] "POST /reset-password HTTP/1.1" 200 -
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.0.0.5:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 413-389-631
+INFO:werkzeug: * Detected change in 'C:\\inetpub\\wwwroot\\portfolio\\main.py', reloading
+INFO:werkzeug: * Restarting with stat

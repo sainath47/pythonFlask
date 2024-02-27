@@ -1,0 +1,758 @@
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.0.0.5:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 413-389-631
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 05:15:12] "GET /getAllLeaseDataByUser/thakud07 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 05:16:59] "POST /validateUser HTTP/1.1" 200 -
+ERROR:root:404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 05:17:26] "[33mGET /thakud07 HTTP/1.1[0m" 404 -
+ERROR:root:404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 05:18:13] "[33mGET /getAllLeaseDataByUser/ HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 05:18:31] "GET /getAllLeaseDataByUser/thakud07 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 05:52:08] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 05:54:43] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 05:55:45] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 06:02:42] "GET /getAllLeaseDataByUser/thakud07 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 06:03:07] "[31m[1mGET /getAllLeaseDataByUser/thakud07 HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 06:03:24] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 06:04:31] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 08:55:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 09:11:10] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 09:39:22] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 10:02:08] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 10:02:08] "[31m[1mGET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 10:10:33] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 10:10:34] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 10:16:57] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 10:16:58] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 10:39:43] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:01:49] "POST /validateUser HTTP/1.1" 200 -
+ERROR:root:415 Unsupported Media Type: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:05:51] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:08:08] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:43] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:44] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:44] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:44] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:44] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:44] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:44] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:44] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:44] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:44] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:09:44] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:11:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:15:41] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:15:42] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:17:30] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:17:50] "POST /RegisterUser HTTP/1.1" 200 -
+ERROR:root:list index out of range
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:22:12] "[35m[1mGET /getAllLeaseData HTTP/1.1[0m" 500 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:23:19] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:44:17] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:48:07] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:54:41] "POST /validateUser HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 11:54:42] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:20:14] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:24:58] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:24:59] "[31m[1mGET /getAllLeaseDataByUser/0 HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:26:37] "[31m[1mGET /getAllLeaseDataByUser/0 HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:27:14] "[31m[1mGET /getAllLeaseDataByUser/0 HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:28:22] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:28:23] "[31m[1mGET /getAllLeaseDataByUser/0 HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:29:10] "[31m[1mGET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:30:01] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:30:01] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:30:02] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:30:04] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:30:41] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:30:42] "[31m[1mGET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:31:45] "[31m[1mGET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:33:08] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:33:09] "[31m[1mGET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:33:25] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:18] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:root:getAllLeaseData api call is successful
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:root:getAllLeaseData api call is successful
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:19] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:root:getAllLeaseData api call is successful
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:20] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:21] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:22] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:22] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:22] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:22] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:22] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:22] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:22] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:22] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:22] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:22] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:22] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:22] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:22] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:34:24] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:38:05] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:38] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:39] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:39] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:39] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:39] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:39] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:39] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:39] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:39] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:39] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:39] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:39] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:39] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:39] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:39] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:39] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:43:39] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.0.0.5:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 413-389-631
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 12:47:33] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 13:06:03] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 13:06:14] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 14:15:15] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 14:16:07] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 14:16:21] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 14:17:16] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 15:18:17] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 15:18:57] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 15:18:58] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 15:26:05] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 15:26:31] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 15:27:34] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 15:27:35] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 15:28:12] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 15:30:29] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 15:30:30] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 15:41:10] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 15:42:04] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 15:43:30] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 15:43:46] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 15:44:37] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 15:45:15] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 15:45:15] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 15:45:44] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 15:45:45] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 04:57:15] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 04:58:51] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 04:59:58] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 05:00:25] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 05:00:26] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 05:01:02] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 05:01:03] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 05:03:06] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 05:03:11] "[31m[1mGET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 05:03:20] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 05:29:13] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 05:29:14] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+ERROR:root:list index out of range
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 05:30:07] "[35m[1mGET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 05:31:15] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 05:34:56] "[31m[1mGET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 05:35:09] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 05:38:26] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 05:44:01] "[31m[1mGET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 05:44:52] "[31m[1mGET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 05:47:19] "[31m[1mGET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 05:49:44] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 05:50:25] "[31m[1mGET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 05:53:44] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 05:54:49] "[31m[1mGET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 05:55:55] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 06:00:18] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 06:00:19] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 06:14:10] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 06:21:50] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 06:21:51] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 06:25:16] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 06:25:17] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 06:27:03] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 06:28:29] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 06:44:56] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 06:45:04] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 06:45:05] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 06:46:24] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 06:46:25] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 07:04:55] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 07:05:26] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 07:06:37] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 07:07:27] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 07:09:16] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 07:10:19] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 07:11:01] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 07:15:32] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 07:15:33] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 07:20:34] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 07:29:08] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 07:29:09] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 07:30:26] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 07:34:24] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 07:40:04] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 07:41:35] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 07:45:42] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 07:45:55] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 07:47:28] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 08:38:40] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 08:39:41] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 08:39:42] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 08:40:22] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 08:47:02] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 08:47:03] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 08:59:47] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 08:59:53] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 09:01:05] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 09:01:19] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 09:01:57] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 09:02:02] "[31m[1mGET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 09:02:47] "[31m[1mGET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 09:15:05] "[31m[1mGET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 09:16:58] "[31m[1mGET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 09:17:54] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 09:19:04] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 09:45:57] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 09:46:27] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 09:46:28] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 09:46:58] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 09:47:47] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 09:50:29] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 09:50:51] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 09:54:27] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 09:56:38] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 10:15:12] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 10:15:46] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 10:16:41] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 10:17:19] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 11:18:19] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 11:19:40] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 12:07:46] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 12:09:25] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 12:14:46] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 12:21:44] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Oct/2023 12:24:04] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -

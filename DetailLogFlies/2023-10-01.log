@@ -1,0 +1,76 @@
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 413-389-631
+ERROR:root:name 'datetime' is not defined
+INFO:werkzeug:127.0.0.1 - - [01/Oct/2023 05:59:04] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\inetpub\\wwwroot\\portfolio\\main.py', reloading
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 413-389-631
+ERROR:root:module 'jwt' has no attribute 'encode'
+INFO:werkzeug:127.0.0.1 - - [01/Oct/2023 05:59:26] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\inetpub\\wwwroot\\portfolio\\devenv\\Lib\\site-packages\\jwt\\__init__.py', reloading
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 413-389-631
+INFO:werkzeug: * Detected change in 'C:\\inetpub\\wwwroot\\portfolio\\main.py', reloading
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 413-389-631
+ERROR:root:name 'token' is not defined
+INFO:werkzeug:127.0.0.1 - - [01/Oct/2023 06:05:21] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\inetpub\\wwwroot\\portfolio\\main.py', reloading
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 413-389-631
+INFO:werkzeug:127.0.0.1 - - [01/Oct/2023 06:05:50] "POST /validateUser HTTP/1.1" 200 -
+ERROR:root:name 'secret_key' is not defined
+INFO:werkzeug:127.0.0.1 - - [01/Oct/2023 06:06:20] "[35m[1mGET /getAllLeaseData HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\inetpub\\wwwroot\\portfolio\\main.py', reloading
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 413-389-631
+ERROR:root:name 'g' is not defined
+INFO:werkzeug:127.0.0.1 - - [01/Oct/2023 06:08:22] "[35m[1mGET /getAllLeaseData HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\inetpub\\wwwroot\\portfolio\\main.py', reloading
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 413-389-631
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [01/Oct/2023 06:10:06] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Oct/2023 06:10:40] "GET /getAllLeaseDataByUser/thakud07 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\inetpub\\wwwroot\\portfolio\\main.py', reloading
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 413-389-631
+INFO:werkzeug:127.0.0.1 - - [01/Oct/2023 06:11:05] "[31m[1mGET /getAllLeaseDataByUser/thakud07 HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [01/Oct/2023 06:11:12] "GET /getAllLeaseDataByUser/thakud07 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\inetpub\\wwwroot\\portfolio\\logger.py', reloading
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 413-389-631
+INFO:werkzeug:127.0.0.1 - - [01/Oct/2023 10:49:34] "POST /validateUser HTTP/1.1" 200 -
+ERROR:root:400 Bad Request: Failed to decode JSON object: Expecting property name enclosed in double quotes: line 4 column 1 (char 66)
+INFO:werkzeug:127.0.0.1 - - [01/Oct/2023 10:51:25] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Oct/2023 10:51:30] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Oct/2023 10:52:14] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Oct/2023 10:52:23] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Oct/2023 10:53:27] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Oct/2023 10:53:28] "[31m[1mGET /getAllLeaseDataByUser/thakud07 HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [01/Oct/2023 10:53:47] "[31m[1mGET /getAllLeaseDataByUser/thakud07 HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [01/Oct/2023 10:54:06] "[31m[1mGET /getAllLeaseDataByUser/thakud07?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRlZXBhbEBnbWFpbC5jb20iLCJleHAiOjE2OTg3NDk1NDN9.FeZpUfkOYf3aLUMtVJIQ-bj7JCoLA8kQpr2PI4WiKU8 HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [01/Oct/2023 10:54:13] "[31m[1mGET /getAllLeaseDataByUser/thakud07?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRlZXBhbEBnbWFpbC5jb20iLCJleHAiOjE2OTg3NDk1NDN9.FeZpUfkOYf3aLUMtVJIQ-bj7JCoLA8kQpr2PI4WiKU8 HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 03:21:33] "[31m[1mGET /getAllLeaseDataByUser/thakud07 HTTP/1.1[0m" 401 -
+ERROR:root:Can't reconnect until invalid transaction is rolled back.  Please rollback() fully before proceeding (Background on this error at: https://sqlalche.me/e/20/8s2b)
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 03:21:54] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 03:21:58] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 03:22:18] "[31m[1mGET /getAllLeaseDataByUser/thakud07 HTTP/1.1[0m" 401 -
+ERROR:root:list index out of range
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 03:22:27] "[35m[1mGET /getAllLeaseDataByUser/thakud07 HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 03:22:48] "[31m[1mGET /getAllLeaseDataByUser/thakud07 HTTP/1.1[0m" 401 -
+ERROR:root:list index out of range
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 03:22:55] "[35m[1mGET /getAllLeaseDataByUser/thakud07 HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 04:46:43] "[31m[1mGET /getAllLeaseDataByUser/thakud07 HTTP/1.1[0m" 401 -
+ERROR:root:list index out of range
+INFO:werkzeug:127.0.0.1 - - [03/Oct/2023 04:47:01] "[35m[1mGET /getAllLeaseDataByUser/thakud07 HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\inetpub\\wwwroot\\portfolio\\main.py', reloading

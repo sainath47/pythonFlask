@@ -1,0 +1,50 @@
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.0.0.5:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 413-389-631
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 07:27:44] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 07:28:52] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 07:33:34] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 07:33:35] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.0.0.5:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 413-389-631
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 07:48:18] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 07:49:00] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 08:02:16] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 08:02:17] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 08:03:44] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 08:04:17] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 08:04:17] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 08:04:53] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 08:06:06] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 08:07:11] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 08:07:12] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 08:07:39] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 08:08:04] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 08:08:05] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 09:25:16] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 09:31:08] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 09:31:09] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 09:53:06] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 09:53:07] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 09:55:34] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 10:48:40] "GET /getAllLeaseDataByUser/himanshijain201@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 10:53:23] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 10:53:36] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2023 11:18:00] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\inetpub\\wwwroot\\portfolio\\main.py', reloading
+INFO:werkzeug: * Restarting with stat

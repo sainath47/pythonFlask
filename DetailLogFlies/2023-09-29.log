@@ -1,0 +1,59 @@
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 413-389-631
+INFO:werkzeug: * Detected change in 'C:\\inetpub\\wwwroot\\portfolio\\main.py', reloading
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 413-389-631
+INFO:werkzeug:127.0.0.1 - - [29/Sep/2023 11:41:03] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\inetpub\\wwwroot\\portfolio\\main.py', reloading
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 413-389-631
+INFO:werkzeug:127.0.0.1 - - [29/Sep/2023 11:41:31] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\inetpub\\wwwroot\\portfolio\\main.py', reloading
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 413-389-631
+INFO:werkzeug:127.0.0.1 - - [29/Sep/2023 11:43:22] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Sep/2023 11:43:26] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Sep/2023 11:43:29] "POST /RegisterUser HTTP/1.1" 200 -
+ERROR:root:405 Method Not Allowed: The method is not allowed for the requested URL.
+INFO:werkzeug:127.0.0.1 - - [29/Sep/2023 11:44:20] "[31m[1mGET /RegisterUser HTTP/1.1[0m" 405 -
+INFO:werkzeug:127.0.0.1 - - [29/Sep/2023 11:44:26] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Sep/2023 11:45:39] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Sep/2023 11:46:06] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Sep/2023 11:46:17] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Sep/2023 11:46:32] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Sep/2023 11:46:44] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\inetpub\\wwwroot\\portfolio\\main.py', reloading
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.0.0.5:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 413-389-631
+INFO:werkzeug:127.0.0.1 - - [29/Sep/2023 11:54:09] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Sep/2023 11:54:20] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\inetpub\\wwwroot\\portfolio\\main.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 413-389-631
+INFO:werkzeug:127.0.0.1 - - [29/Sep/2023 11:55:32] "[31m[1mGET /getAllLeaseData HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [01/Oct/2023 05:53:36] "[31m[1mGET /getAllLeaseData HTTP/1.1[0m" 401 -
+INFO:werkzeug: * Detected change in 'C:\\inetpub\\wwwroot\\portfolio\\main.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat

@@ -1,0 +1,187 @@
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.0.0.5:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 413-389-631
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 07:45:55] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 07:45:56] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 07:46:15] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 07:50:52] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 08:08:16] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 08:16:13] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 08:19:25] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 08:23:26] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 08:27:06] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 08:28:54] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 08:30:18] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 08:32:02] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 08:41:06] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 08:41:55] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 08:47:45] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:18:55] "[31m[1mGET /getAllLeaseData HTTP/1.1[0m" 401 -
+ERROR:root:404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:18:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:19:00] "[31m[1mGET /getAllLeaseData HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:19:11] "[31m[1mGET /getAllLeaseData HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:20:31] "POST /send-otp HTTP/1.1" 200 -
+INFO:twilio.http_client:-- BEGIN Twilio API Request --
+INFO:twilio.http_client:POST Request: https://api.twilio.com/2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json
+INFO:twilio.http_client:Headers:
+INFO:twilio.http_client:User-Agent : twilio-python/8.9.1 (Windows AMD64) Python/3.11.5
+INFO:twilio.http_client:X-Twilio-Client : python-8.9.1
+INFO:twilio.http_client:Accept-Charset : utf-8
+INFO:twilio.http_client:Content-Type : application/x-www-form-urlencoded
+INFO:twilio.http_client:Accept : application/json
+INFO:twilio.http_client:-- END Twilio API Request --
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twilio.com:443
+DEBUG:urllib3.connectionpool:https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json HTTP/1.1" 400 339
+INFO:twilio.http_client:Response Status Code: 400
+INFO:twilio.http_client:Response Headers: {'Date': 'Fri, 13 Oct 2023 09:21:12 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '339', 'Connection': 'keep-alive', 'Twilio-Request-Id': 'RQ3e03603b015a38e56b287033f976284a', 'Twilio-Request-Duration': '0.091', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'Strict-Transport-Security': 'max-age=31536000', 'Twilio-Concurrent-Requests': '1', 'X-Shenanigans': 'none', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:21:12] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:21:20] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:22:32] "POST /send-otp HTTP/1.1" 200 -
+INFO:twilio.http_client:-- BEGIN Twilio API Request --
+INFO:twilio.http_client:POST Request: https://api.twilio.com/2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json
+INFO:twilio.http_client:Headers:
+INFO:twilio.http_client:User-Agent : twilio-python/8.9.1 (Windows AMD64) Python/3.11.5
+INFO:twilio.http_client:X-Twilio-Client : python-8.9.1
+INFO:twilio.http_client:Accept-Charset : utf-8
+INFO:twilio.http_client:Content-Type : application/x-www-form-urlencoded
+INFO:twilio.http_client:Accept : application/json
+INFO:twilio.http_client:-- END Twilio API Request --
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twilio.com:443
+DEBUG:urllib3.connectionpool:https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json HTTP/1.1" 400 162
+INFO:twilio.http_client:Response Status Code: 400
+INFO:twilio.http_client:Response Headers: {'Date': 'Fri, 13 Oct 2023 09:23:22 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '162', 'Connection': 'keep-alive', 'Twilio-Request-Id': 'RQcf65eb4d5eb49e69363bd6b523521785', 'Twilio-Request-Duration': '0.061', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'Strict-Transport-Security': 'max-age=31536000', 'Twilio-Concurrent-Requests': '1', 'X-Shenanigans': 'none', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:23:22] "POST /send-otp HTTP/1.1" 200 -
+INFO:twilio.http_client:-- BEGIN Twilio API Request --
+INFO:twilio.http_client:POST Request: https://api.twilio.com/2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json
+INFO:twilio.http_client:Headers:
+INFO:twilio.http_client:User-Agent : twilio-python/8.9.1 (Windows AMD64) Python/3.11.5
+INFO:twilio.http_client:X-Twilio-Client : python-8.9.1
+INFO:twilio.http_client:Accept-Charset : utf-8
+INFO:twilio.http_client:Content-Type : application/x-www-form-urlencoded
+INFO:twilio.http_client:Accept : application/json
+INFO:twilio.http_client:-- END Twilio API Request --
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twilio.com:443
+DEBUG:urllib3.connectionpool:https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json HTTP/1.1" 201 820
+INFO:twilio.http_client:Response Status Code: 201
+INFO:twilio.http_client:Response Headers: {'Date': 'Fri, 13 Oct 2023 09:23:38 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '820', 'Connection': 'keep-alive', 'Twilio-Request-Id': 'RQc2462db8b4637f9983e73ae04f1fd31d', 'Twilio-Request-Duration': '0.134', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'Strict-Transport-Security': 'max-age=31536000', 'Twilio-Concurrent-Requests': '1', 'X-Shenanigans': 'none', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:23:38] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:24:40] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:26:54] "POST /send-otp HTTP/1.1" 200 -
+INFO:twilio.http_client:-- BEGIN Twilio API Request --
+INFO:twilio.http_client:POST Request: https://api.twilio.com/2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json
+INFO:twilio.http_client:Headers:
+INFO:twilio.http_client:User-Agent : twilio-python/8.9.1 (Windows AMD64) Python/3.11.5
+INFO:twilio.http_client:X-Twilio-Client : python-8.9.1
+INFO:twilio.http_client:Accept-Charset : utf-8
+INFO:twilio.http_client:Content-Type : application/x-www-form-urlencoded
+INFO:twilio.http_client:Accept : application/json
+INFO:twilio.http_client:-- END Twilio API Request --
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twilio.com:443
+DEBUG:urllib3.connectionpool:https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json HTTP/1.1" 201 820
+INFO:twilio.http_client:Response Status Code: 201
+INFO:twilio.http_client:Response Headers: {'Date': 'Fri, 13 Oct 2023 09:27:10 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '820', 'Connection': 'keep-alive', 'Twilio-Request-Id': 'RQ066f5f56f0320b78330c70a252a27032', 'Twilio-Request-Duration': '0.128', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'Strict-Transport-Security': 'max-age=31536000', 'Twilio-Concurrent-Requests': '1', 'X-Shenanigans': 'none', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:27:10] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:29:09] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:30:12] "POST /send-otp HTTP/1.1" 200 -
+INFO:twilio.http_client:-- BEGIN Twilio API Request --
+INFO:twilio.http_client:POST Request: https://api.twilio.com/2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json
+INFO:twilio.http_client:Headers:
+INFO:twilio.http_client:User-Agent : twilio-python/8.9.1 (Windows AMD64) Python/3.11.5
+INFO:twilio.http_client:X-Twilio-Client : python-8.9.1
+INFO:twilio.http_client:Accept-Charset : utf-8
+INFO:twilio.http_client:Content-Type : application/x-www-form-urlencoded
+INFO:twilio.http_client:Accept : application/json
+INFO:twilio.http_client:-- END Twilio API Request --
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twilio.com:443
+DEBUG:urllib3.connectionpool:https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json HTTP/1.1" 201 820
+INFO:twilio.http_client:Response Status Code: 201
+INFO:twilio.http_client:Response Headers: {'Date': 'Fri, 13 Oct 2023 09:30:19 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '820', 'Connection': 'keep-alive', 'Twilio-Request-Id': 'RQd2cc20e314f5eacf92c83c0bf6b0f201', 'Twilio-Request-Duration': '0.141', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'Strict-Transport-Security': 'max-age=31536000', 'Twilio-Concurrent-Requests': '1', 'X-Shenanigans': 'none', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:30:19] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\inetpub\\wwwroot\\portfolio\\main.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Engine(mysql+pymysql://root:***@localhost:3306/dfx)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 413-389-631
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:30:39] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:30:45] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:31:15] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:31:39] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:35:31] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:37:51] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:39:04] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:39:11] "POST /send-otp HTTP/1.1" 200 -
+INFO:twilio.http_client:-- BEGIN Twilio API Request --
+INFO:twilio.http_client:POST Request: https://api.twilio.com/2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json
+INFO:twilio.http_client:Headers:
+INFO:twilio.http_client:User-Agent : twilio-python/8.9.1 (Windows AMD64) Python/3.11.5
+INFO:twilio.http_client:X-Twilio-Client : python-8.9.1
+INFO:twilio.http_client:Accept-Charset : utf-8
+INFO:twilio.http_client:Content-Type : application/x-www-form-urlencoded
+INFO:twilio.http_client:Accept : application/json
+INFO:twilio.http_client:-- END Twilio API Request --
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twilio.com:443
+DEBUG:urllib3.connectionpool:https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json HTTP/1.1" 400 162
+INFO:twilio.http_client:Response Status Code: 400
+INFO:twilio.http_client:Response Headers: {'Date': 'Fri, 13 Oct 2023 09:39:30 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '162', 'Connection': 'keep-alive', 'Twilio-Request-Id': 'RQe38200e001dc49527cc08dfaf36fbb00', 'Twilio-Request-Duration': '0.058', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'Strict-Transport-Security': 'max-age=31536000', 'Twilio-Concurrent-Requests': '1', 'X-Shenanigans': 'none', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:39:30] "POST /send-otp HTTP/1.1" 200 -
+INFO:twilio.http_client:-- BEGIN Twilio API Request --
+INFO:twilio.http_client:POST Request: https://api.twilio.com/2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json
+INFO:twilio.http_client:Headers:
+INFO:twilio.http_client:User-Agent : twilio-python/8.9.1 (Windows AMD64) Python/3.11.5
+INFO:twilio.http_client:X-Twilio-Client : python-8.9.1
+INFO:twilio.http_client:Accept-Charset : utf-8
+INFO:twilio.http_client:Content-Type : application/x-www-form-urlencoded
+INFO:twilio.http_client:Accept : application/json
+INFO:twilio.http_client:-- END Twilio API Request --
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twilio.com:443
+DEBUG:urllib3.connectionpool:https://api.twilio.com:443 "POST /2010-04-01/Accounts/ACd385449272c77d3c5442bc12caa32c5e/Messages.json HTTP/1.1" 400 339
+INFO:twilio.http_client:Response Status Code: 400
+INFO:twilio.http_client:Response Headers: {'Date': 'Fri, 13 Oct 2023 09:39:39 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '339', 'Connection': 'keep-alive', 'Twilio-Request-Id': 'RQ9d9a09caaedc458a7e3584a49bf829b7', 'Twilio-Request-Duration': '0.090', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'Strict-Transport-Security': 'max-age=31536000', 'Twilio-Concurrent-Requests': '1', 'X-Shenanigans': 'none', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:39:39] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:39:48] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:45:15] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:48:24] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 09:50:01] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 10:02:05] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 10:02:34] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 10:03:51] "POST /send-otp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 10:05:08] "POST /validateUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 10:05:09] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 10:10:59] "POST /validateUser HTTP/1.1" 200 -
+ERROR:root:405 Method Not Allowed: The method is not allowed for the requested URL.
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 10:13:05] "[31m[1mPOST /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1[0m" 405 -
+ERROR:root:405 Method Not Allowed: The method is not allowed for the requested URL.
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 10:14:08] "[31m[1mPOST /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1[0m" 405 -
+ERROR:root:405 Method Not Allowed: The method is not allowed for the requested URL.
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 10:14:46] "[31m[1mPOST /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1[0m" 405 -
+ERROR:root:405 Method Not Allowed: The method is not allowed for the requested URL.
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 10:16:12] "[31m[1mPOST /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1[0m" 405 -
+ERROR:root:405 Method Not Allowed: The method is not allowed for the requested URL.
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 10:16:29] "[31m[1mPOST /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1[0m" 405 -
+ERROR:root:405 Method Not Allowed: The method is not allowed for the requested URL.
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 10:16:36] "[31m[1mPOST /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1[0m" 405 -
+ERROR:root:405 Method Not Allowed: The method is not allowed for the requested URL.
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 10:16:49] "[31m[1mPOST /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1[0m" 405 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 10:17:13] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+ERROR:root:405 Method Not Allowed: The method is not allowed for the requested URL.
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 10:17:35] "[31m[1mPOST /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1[0m" 405 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 10:18:32] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2023 10:28:37] "GET /getAllLeaseDataByUser/parth.sheth58@gmail.com HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Oct/2023 22:44:12] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:root:getAllLeaseData api call is successful
+INFO:werkzeug:127.0.0.1 - - [16/Oct/2023 00:44:35] "GET /getAllLeaseData HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Oct/2023 00:46:58] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Oct/2023 00:47:06] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Oct/2023 00:47:09] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Oct/2023 00:47:13] "POST /RegisterUser HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\inetpub\\wwwroot\\portfolio\\main.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat

@@ -46,8 +46,8 @@ CORS(app)
 db_config = {
     'host': 'api.portfolioone.io',
     'port': 3306,
-    'user': 'portfolio',
-    'password': 'PortfolioOne123',
+    'user': 'pfo',
+    'password': 'gqF%kU2e3~09',
     'db': 'dfx'
 }
 
@@ -543,7 +543,9 @@ WHERE ud.email = '{username}' AND BINARY ud.password = '{password}' AND ud.is_de
                         'role_id': user_data.get('role_id'),
                         'org_id': user_data.get('org_id'),
                         'is_email_verified': user_data['is_email_verified'],
-                        'subscribed': False
+                        'subscribed': False,                        'sq_feet': None,
+                    'count_docs': None,
+                    'registration_date': None,
                     },
                     # 'Message': 'User subscription has expired'
                     "Message": "User found",
@@ -560,7 +562,10 @@ WHERE ud.email = '{username}' AND BINARY ud.password = '{password}' AND ud.is_de
                         'role_id': user_data.get('role_id'),
                         'org_id': user_data.get('org_id'),
                         'is_email_verified': user_data['is_email_verified'],
-                        'subscribed': False
+                        'subscribed': False,
+                        'sq_feet': None,
+                    'count_docs': None,
+                    'registration_date': None,
                     },
                     # 'Message': 'User just clicked on button of pypal subscription, never completed the payment'
                     "Message": "User found",
@@ -578,7 +583,10 @@ WHERE ud.email = '{username}' AND BINARY ud.password = '{password}' AND ud.is_de
                         'role_id': user_data.get('role_id'),
                         'org_id': user_data.get('org_id'),
                         'is_email_verified': user_data['is_email_verified'],
-                        'subscribed': True
+                        'subscribed': True,
+                        'sq_feet': None,
+                    'count_docs': None,
+                    'registration_date': None,
                     },
                     # 'Message': 'User is a subscriber'
                     "Message": "User found",
@@ -605,7 +613,7 @@ WHERE ud.email = '{username}' AND BINARY ud.password = '{password}' AND ud.is_de
                     'organisation': user_data['organisation'],
                     'user_id': user_data['user_id'],
                     'role_id': user_data.get('role_id'),
-                                            'org_id': user_data.get('org_id'),
+                    'org_id': user_data.get('org_id'),
                     'sq_feet': lease_data['sq_feet'],
                     'count_docs': lease_data['doc_count'],
                     'registration_date': registration_date,
@@ -650,7 +658,9 @@ def RegisterUser():
         email = data['email']
         mobile = data['mobile']
         password = data['password']  # Plain text password
-        organisation = data['organisation']
+        # organisation = data['organisation']
+        org_id = data.get('org_id')
+        role_id = data.get('role_id')
 
         # Create a database connection
         connection = mysql.connector.connect(
@@ -694,8 +704,8 @@ def RegisterUser():
             # salt = bcrypt.gensalt()
             # hashed_password = bcrypt.hashpw(password.encode('utf-8'), salt)
 
-            insert_query = "INSERT INTO user_details (fullname, email, mobile, password, organisation) VALUES (%s, %s, %s, %s, %s)"
-            insert_data = (name, email, mobile, password, organisation)  # Store the hashed password
+            insert_query = "INSERT INTO user_details (fullname, email, mobile, password, org_id,role_id) VALUES (%s, %s, %s, %s, %s, %s)"
+            insert_data = (name, email, mobile, password, org_id,role_id)  # Store the hashed password
             cursor.execute(insert_query, insert_data)
                     # Get the user_id of the newly inserted user
             user_id = cursor.lastrowid
@@ -915,7 +925,10 @@ h2 {{
 '''
             mail.send(message)
             # Fetch all admins' email addresses associated with the organization
-            organisation_id = 1
+            organisation_id = data.get('org_id')
+            if not organisation_id:
+                print(organisation_id)
+                organisation_id= 1
             admin_query = "SELECT email FROM user_details WHERE org_id = %s AND role_id = 3"
             cursor.execute(admin_query, (organisation_id,))
             admin_emails = [admin['email'] for admin in cursor.fetchall()]
@@ -2260,7 +2273,7 @@ def add_organization():
         # Commit changes to the database
         connection.commit()
 
-        return jsonify({'message': 'Organization added successfully', 'status': 200}), 200
+        return jsonify({'message': 'Organization added successfully', 'status': 200,'id':organization_id, 'name': name}), 200
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500

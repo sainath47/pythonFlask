@@ -52,8 +52,12 @@ select * from user_roles;
 delete from user_details where email='reddysainath47@gmail.com';
 delete from user_details where email='alice.johnson@example.com';
 select * from user_details where email='reddysainath47@gmail.com';
+select * from user_details where email='sainath.mail42@gmail.com';
 select * from user_details where org_id =1 and role_id = 3;
 
+
+select count(*) from lease_data where user_id= 10;
+select * from lease_data where user_id= 10;
 
 
 update user_details 
@@ -61,7 +65,7 @@ set org_id =1 , role_id =3
 where email = 'reddysainath47@gmail.com';
 
 select * from user_details where email='p.v.sainathreddy@hotmail.com';
-select * from user_details where email='parth.ycmou2018@gmail.com';
+select * from user_details where email='sainath.mail42@gmail.com';
 
 select * from user_details where email= "p.v.sainathreddy@hotmail.com";
 -- user_id : 99

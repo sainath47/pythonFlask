@@ -40,16 +40,23 @@ configure_logging(log_directory)
 
 
 
+
+
+
+
 app = Flask(__name__)
 CORS(app)
 
-db_config = {
-    'host': 'api.portfolioone.io',
-    'port': 3306,
-    'user': 'pfo',
-    'password': 'gqF%kU2e3~09',
-    'db': 'dfx'
-}
+
+# Load environment-specific configuration
+if os.environ.get('FLASK_ENV') == 'production':
+    app.config.from_pyfile('config_prod.py')
+else:
+    app.config.from_pyfile('config_dev.py')
+
+# Use configuration settings
+db_config = app.config['DB_CONFIG']
+
 
 # Flask-Mail configuration
 app.config['MAIL_SERVER'] = 'smtp.office365.com'
@@ -1877,6 +1884,8 @@ def handle_response(response):
 @token_required
 def create_subscription_endpoint():
     """Endpoint for creating a subscription."""
+    connection = None
+    cursor = None
     try:
         from datetime import datetime
         connection = mysql.connector.connect(**db_config)
@@ -1894,11 +1903,11 @@ def create_subscription_endpoint():
             is_active = subscription_data[1]
 
             # Check if the subscription is active and not expired
-            if is_active and end_date > datetime.now():
+            if end_date and is_active and end_date > datetime.now():
                 return jsonify({"error": "You already have an active subscription."})
 
             # If the subscription is expired, mark it as inactive
-            if not is_active and end_date < datetime.now():
+            if end_date and not is_active and end_date < datetime.now():
                 update_query = "UPDATE subscriptions SET is_active = 0 WHERE user_id = %s"
                 cursor.execute(update_query, (user_id,))
                 connection.commit()
@@ -1924,8 +1933,11 @@ def create_subscription_endpoint():
         return jsonify({"error": "Failed to create order."}), 500
 
     finally:
-        cursor.close()
-        connection.close()
+        if cursor:
+            cursor.close()
+        if connection:
+            connection.close()
+
 
 @app.route("/api/webhook/paypal", methods=["POST"])
 def paypal_webhook():

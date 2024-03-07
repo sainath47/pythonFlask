@@ -1,5 +1,5 @@
 # coding: cp1252
-from flask import request, json, jsonify, Flask,g
+from flask import request, json, jsonify, Flask,g, send_file
 # import pandas as pd
 # from sqlalchemy import create_engine,text
 # from flask_sqlalchemy import SQLAlchemy
@@ -8,21 +8,37 @@ import mysql.connector
 from flask_mail import Mail, Message
 # from twilio.rest import Client
 import random
-import datetime
 import jwt
 from functools import wraps
 import traceback 
 import pandas as pd
 import uuid
+import os
+from mysql.connector import Error
+from logger import configure_logging
+import datetime
+
+
+
+import requests
+import base64
+import json
+
+
+# Get the directory of the current Python file
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Define the path to the log file directory
+log_directory = os.path.join(current_dir, 'logs')
+
+# Configure logging
+configure_logging(log_directory)
 
 
 
 
 
 
-# from logger import logging
-
-# logger = logging.getLogger()
 
 app = Flask(__name__)
 CORS(app)
@@ -30,8 +46,8 @@ CORS(app)
 db_config = {
     'host': 'api.portfolioone.io',
     'port': 3306,
-    'user': 'portfolio',
-    'password': 'PortfolioOne123',
+    'user': 'pfo',
+    'password': 'gqF%kU2e3~09',
     'db': 'dfx'
 }
 
@@ -56,8 +72,161 @@ mail = Mail(app)
 # app.config['MAIL_PASSWORD'] = 'jxyhiqscawrnbntw'  # Replace with your email password
 # app.config['MAIL_DEFAULT_SENDER'] = 'reddysainath47@gmail.com'
 
+def send_warning_email(email, message):
+    msg = Message('Warning: Data Deletion Notice', recipients=[email])
+    msg.body = message
+    mail.send(msg)
+
+def check_unsubscribed_users():
+    try:
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor(dictionary=True)
+
+        # Calculate the date 15 days ago
+        fifteen_days_ago = datetime.datetime.now() - datetime.timedelta(days=15)
+
+        # Query users whose subscription end date is exactly 15 days ago
+        unsubscribed_users_query = """
+            SELECT ud.email 
+            FROM user_details ud 
+            LEFT JOIN subscriptions s ON ud.user_id = s.user_id 
+            WHERE s.end_date = %s
+        """
+        cursor.execute(unsubscribed_users_query, (fifteen_days_ago,))
+        trial_end_users = cursor.fetchall()
+
+        # Query users whose subscription end date is null and created_at is exactly 15 days ago
+        trail_users_query = """
+            SELECT ud.email 
+            FROM user_details ud 
+            LEFT JOIN subscriptions s ON ud.user_id = s.user_id 
+            WHERE s.end_date IS NULL AND ud.created_at = %s
+        """
+        cursor.execute(trail_users_query, (fifteen_days_ago,))
+        twenty_nine_days_users = cursor.fetchall()
+
+        # Send warning emails to users
+        for user in trial_end_users:
+            message = "Dear User,\n\nThis is a warning that your data is scheduled for deletion due to being unsubscribed for more than 15 days. Please take action to prevent this.\n\nSincerely,\nYour Application Team"
+            send_warning_email(user['email'], message)
+
+        for user in twenty_nine_days_users:
+            message = "Dear User,\n\nThis is a reminder that your data is scheduled for deletion due to being unsubscribed for more than 15 days. Please take action to prevent this.\n\nSincerely,\nYour Application Team"
+            send_warning_email(user['email'], message)
+
+        # Calculate the date 29 days ago
+        twenty_nine_days_ago = datetime.datetime.now() - datetime.timedelta(days=29)
+
+        # Query users whose subscription end date is exactly 29 days ago
+        unsubscribed_users_query = """
+            SELECT ud.email 
+            FROM user_details ud 
+            LEFT JOIN subscriptions s ON ud.user_id = s.user_id 
+            WHERE s.end_date = %s
+        """
+        cursor.execute(unsubscribed_users_query, (twenty_nine_days_ago,))
+        trial_end_users = cursor.fetchall()
+
+        # Query users whose subscription end date is null and created_at is exactly 29 days ago
+        trail_users_query = """
+            SELECT ud.email 
+            FROM user_details ud 
+            LEFT JOIN subscriptions s ON ud.user_id = s.user_id 
+            WHERE s.end_date IS NULL AND ud.created_at = %s
+        """
+        cursor.execute(trail_users_query, (twenty_nine_days_ago,))
+        twenty_nine_days_users = cursor.fetchall()
+
+        # Send warning emails to users
+        for user in trial_end_users:
+            message = "Dear User,\n\nThis is a warning that your data is scheduled for deletion due to being unsubscribed for more than 29 days. Please take action to prevent this.\n\nSincerely,\nYour Application Team"
+            send_warning_email(user['email'], message)
+
+        for user in twenty_nine_days_users:
+            message = "Dear User,\n\nThis is a reminder that your data is scheduled for deletion due to being unsubscribed for more than 29 days. Please take action to prevent this.\n\nSincerely,\nYour Application Team"
+            send_warning_email(user['email'], message)
 
 
+        # Commit the transaction
+        connection.commit()
+
+    except Exception as e:
+        print("Error:", e)
+
+    finally:
+        cursor.close()
+        connection.close()
+
+@app.route('/api/send_warning_emails', methods=['POST'])
+def send_warning_emails():
+    check_unsubscribed_users()
+    return jsonify({'message': 'Warning emails sent successfully'}), 200
+
+def delete_unsubscribed_users():
+    try:
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor(dictionary=True)
+
+        # Calculate the date 30 days ago
+        thirty_days_ago = datetime.datetime.now() - datetime.timedelta(days=30)
+
+        # Query users whose subscription end date is exactly 30 days ago
+        unsubscribed_users_query = """
+            SELECT ud.user_id 
+            FROM user_details ud 
+            LEFT JOIN subscriptions s ON ud.user_id = s.user_id 
+            WHERE s.end_date < %s
+        """
+        cursor.execute(unsubscribed_users_query, (thirty_days_ago,))
+        unsubscribed_users = cursor.fetchall()
+
+        # Query users whose subscription end date is null and created_at is exactly 30 days ago
+        trail_users_query = """
+            SELECT ud.user_id 
+            FROM user_details ud 
+            LEFT JOIN subscriptions s ON ud.user_id = s.user_id 
+            WHERE s.end_date IS NULL AND ud.created_at < %s
+        """
+        cursor.execute(trail_users_query, (thirty_days_ago,))
+        trail_users = cursor.fetchall()
+
+        # Delete users and their data
+        for user in unsubscribed_users:
+            user_id = user['user_id']
+            # Delete user data based on user_id
+            delete_user_data_query = "DELETE FROM lease_data WHERE user_id = %s"
+            cursor.execute(delete_user_data_query, (user_id,))
+            delete_head_count_query = "DELETE FROM user_headcount WHERE user_id = %s"
+            cursor.execute(delete_head_count_query, (user_id,))
+            # Delete user from user_details
+            delete_user_query = "DELETE FROM user_details WHERE user_id = %s"
+            cursor.execute(delete_user_query, (user_id,))
+
+        for user in trail_users:
+            user_id = user['user_id']
+            # Delete user data based on user_id
+            delete_user_data_query = "DELETE FROM lease_data WHERE user_id = %s"
+            cursor.execute(delete_user_data_query, (user_id,))
+            delete_head_count_query = "DELETE FROM user_headcount WHERE user_id = %s"
+            cursor.execute(delete_head_count_query, (user_id,))
+            # Delete user from user_details
+            delete_user_query = "DELETE FROM user_details WHERE user_id = %s"
+            cursor.execute(delete_user_query, (user_id,))
+
+        # Commit the transaction
+        connection.commit()
+
+    except Exception as e:
+        print("Error:", e)
+
+    finally:
+        cursor.close()
+        connection.close()
+
+@app.route('/api/delete_unsubscribers_data', methods=['POST'])
+def deleting_user_data():
+    delete_unsubscribed_users()
+    return jsonify({'message': 'unsubscribed user-data deleted successfully'}), 200
 
 
 # Define a decorator for token authentication
@@ -83,7 +252,18 @@ def token_required(f):
 
     return decorated
 
+@app.route('/api/lease_template')
+def download_file():
+    # Get the absolute path of the directory containing the Flask app
+    app_root = os.path.dirname(os.path.abspath(__file__))
 
+    # Construct the path to the Excel file in the same directory as the app
+    file_path = os.path.join(app_root, 'lease_template.xlsx')
+
+    # Provide a filename for the downloaded file
+    filename = 'lease_template.xlsx'
+
+    return send_file(file_path, as_attachment=True, download_name=filename)
 
 
 @app.route('/api/countries', methods=['GET'])
@@ -123,7 +303,14 @@ def getAllLeaseData():
         cursor = connection.cursor(dictionary=True)
         
 
-        query = "SELECT * FROM lease_data ORDER BY updated_at DESC"
+        query = """
+            SELECT ld.*, u.user_id, u.fullname AS user_name, o.id AS org_id, o.name AS org_name
+            FROM lease_data ld
+            LEFT JOIN user_details u ON ld.user_id = u.user_id
+            LEFT JOIN organisation o ON u.org_id = o.id
+            ORDER BY ld.updated_at DESC
+        """
+
         cursor.execute(query)
 
         data_list = cursor.fetchall()
@@ -151,7 +338,6 @@ def getAllLeaseData():
 
     except mysql.connector.Error as e:
         return jsonify({'error': str(e)}), 500
-
 
 @app.route('/api/getAllLeaseDataByUser/<string:id>', methods=['GET'])
 @token_required
@@ -207,6 +393,95 @@ def getAllLeaseData_by_id(id):
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+
+
+@app.route('/api/getAllLeaseDataa', methods=['GET'])
+@token_required
+def getAllLeaseDataa():
+    try:
+        # Fetch user role_id from token
+        user_id = g.user['user_id']
+        # return jsonify({'user_role_id':user_id})
+        #fetch the user_id from the token & get the role_id corresponding to user a according to get the data
+        connection = mysql.connector.connect(
+            host=db_config['host'],
+            port=db_config['port'],
+            user=db_config['user'],
+            password=db_config['password'],
+            database=db_config['db']
+        )
+        cursor = connection.cursor(dictionary=True)
+        
+        # Query to fetch user's role_id based on user_id
+        role_query = "SELECT role_id,org_id FROM user_details WHERE user_id = %s"
+        cursor.execute(role_query, (user_id,))
+        user_role = cursor.fetchone()
+        user_role_id = user_role['role_id']
+        user_org_id = user_role['org_id']
+        # return jsonify({'user_role_id':user_role})
+
+        if user_role_id == 1:
+            # If user is SUPER_ADMIN, fetch all lease data
+            print('inside the SUPERADMIN BLOCK')
+            query = """
+                SELECT ld.*, u.user_id, u.fullname AS user_name, o.id AS org_id, o.name AS org_name
+                FROM lease_data ld
+                LEFT JOIN user_details u ON ld.user_id = u.user_id
+                LEFT JOIN organisation o ON u.org_id = o.id
+                ORDER BY ld.updated_at DESC
+            """
+            cursor.execute(query)
+        elif user_role_id == 3:
+            # If user is ADMIN, fetch lease data of entire organization
+            query = """
+                SELECT ld.*, u.user_id, u.fullname AS user_name, o.id AS org_id, o.name AS org_name
+                FROM lease_data ld
+                LEFT JOIN user_details u ON ld.user_id = u.user_id
+                LEFT JOIN organisation o ON u.org_id = o.id
+                WHERE u.org_id = %s
+                ORDER BY ld.updated_at DESC
+            """
+            # org_id = g.user['org_id']
+            cursor.execute(query, (user_org_id,))
+        else:
+            # For other users, fetch only their lease data
+            query = """
+                SELECT ld.*, u.user_id, u.fullname AS user_name, o.id AS org_id, o.name AS org_name
+                FROM lease_data ld
+                LEFT JOIN user_details u ON ld.user_id = u.user_id
+                LEFT JOIN organisation o ON u.org_id = o.id
+                WHERE ld.user_id = %s
+                ORDER BY ld.updated_at DESC
+            """
+            cursor.execute(query, (user_id,))
+
+        data_list = cursor.fetchall()
+
+        if len(data_list) == 0:
+            result = {
+                'status': 200,
+                'data': [],
+                'Message': 'Request Submitted Successfully',
+                'count': 0,
+            }
+        else:
+            last_updated_date = data_list[0]['updated_at']
+            result = {
+                'status': 200,
+                'data': data_list,
+                'Message': 'Request Submitted Successfully',
+                'count': len(data_list),
+                'last_updated_date': last_updated_date,
+            }
+
+        return jsonify(result)
+
+    except mysql.connector.Error as e:
+        return jsonify({'error': str(e)}), 500
+
+
+
+
 @app.route('/api/validateUser', methods=['POST'])
 def validateUser():
     connection = mysql.connector.connect(
@@ -221,15 +496,15 @@ def validateUser():
         data = request.get_json()
         username = data['email']
         password = data['password']
+
         # SQL query to fetch data based on the provided email
-        query = f"SELECT email, fullname, mobile, organisation, user_id, is_email_verified FROM user_details WHERE email = '{username}' AND BINARY password = '{password}'"
+        query = f"""SELECT ud.email, ud.fullname, ud.mobile, ud.user_id, ud.is_email_verified, ud.role_id, ud.org_id, o.name AS organisation
+FROM user_details ud
+LEFT JOIN organisation o ON ud.org_id = o.id
+WHERE ud.email = '{username}' AND BINARY ud.password = '{password}' AND ud.is_deleted = FALSE
+"""
         cursor.execute(query)
         user_data = cursor.fetchone()
-        
-        cursor.close()
-        connection.close()
-        
-        # return jsonify({"user":user_data['user_id']})
 
         if user_data is None:
             result = {
@@ -242,29 +517,133 @@ def validateUser():
         if not user_data['is_email_verified']:
             result = {
                 'status': 403,
-
                 'Message': 'Please verify your email before logging in'
             }
             return jsonify(result)
 
+        # Check if the user is present in the subscriptions table
+        subscription_query = f"SELECT * FROM subscriptions WHERE user_id = '{user_data['user_id']}'"
+        cursor.execute(subscription_query)
+        subscription_data = cursor.fetchone()
+
+        if subscription_data:
+            # Check if the subscription has expired
+            end_date = subscription_data['end_date']
+            current_date = datetime.datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
+            
+            if end_date and end_date < datetime.datetime.strptime(current_date, '%Y-%m-%d %H:%M:%S'):
+                result = {
+                    'status': 200,
+                    'data': {
+                        'email': user_data['email'],
+                        'fullname': user_data['fullname'],
+                        'mobile': user_data['mobile'],
+                        'organisation': user_data['organisation'],
+                        'user_id': user_data['user_id'],
+                        'role_id': user_data.get('role_id'),
+                        'org_id': user_data.get('org_id'),
+                        'is_email_verified': user_data['is_email_verified'],
+                        'subscribed': False,                        'sq_feet': None,
+                    'count_docs': None,
+                    'registration_date': None,
+                    },
+                    # 'Message': 'User subscription has expired'
+                    "Message": "User found",
+                }
+            elif not end_date:
+                result = {
+                    'status': 200,
+                    'data': {
+                        'email': user_data['email'],
+                        'fullname': user_data['fullname'],
+                        'mobile': user_data['mobile'],
+                        'organisation': user_data['organisation'],
+                        'user_id': user_data['user_id'],
+                        'role_id': user_data.get('role_id'),
+                        'org_id': user_data.get('org_id'),
+                        'is_email_verified': user_data['is_email_verified'],
+                        'subscribed': False,
+                        'sq_feet': None,
+                    'count_docs': None,
+                    'registration_date': None,
+                    },
+                    # 'Message': 'User just clicked on button of pypal subscription, never completed the payment'
+                    "Message": "User found",
+                }
+              
+            else:
+                result = {
+                    'status': 200,
+                    'data': {
+                        'email': user_data['email'],
+                        'fullname': user_data['fullname'],
+                        'mobile': user_data['mobile'],
+                        'organisation': user_data['organisation'],
+                        'user_id': user_data['user_id'],
+                        'role_id': user_data.get('role_id'),
+                        'org_id': user_data.get('org_id'),
+                        'is_email_verified': user_data['is_email_verified'],
+                        'subscribed': True,
+                        'sq_feet': None,
+                    'count_docs': None,
+                    'registration_date': None,
+                    },
+                    # 'Message': 'User is a subscriber'
+                    "Message": "User found",
+                }
+        else:
+            # User is not a subscriber, provide additional information
+            # For example, no. of sq feet, count of docs, and no. of days since registration
+            # Fetch the additional info from lease_data table
+            lease_data_query = f"SELECT COUNT(*) as doc_count, SUM(rentable_sf) as sq_feet FROM lease_data WHERE user_id = '{user_data['user_id']}'"
+            cursor.execute(lease_data_query)
+            lease_data = cursor.fetchone()
+
+            # Fetch registration date
+            registration_date_query = f"SELECT created_at FROM user_details WHERE user_id = '{user_data['user_id']}'"
+            cursor.execute(registration_date_query)
+            registration_date = cursor.fetchone()['created_at']
+
+            result = {
+                'status': 200,
+                'data': {
+                    'email': user_data['email'],
+                    'fullname': user_data['fullname'],
+                    'mobile': user_data['mobile'],
+                    'organisation': user_data['organisation'],
+                    'user_id': user_data['user_id'],
+                    'role_id': user_data.get('role_id'),
+                    'org_id': user_data.get('org_id'),
+                    'sq_feet': lease_data['sq_feet'],
+                    'count_docs': lease_data['doc_count'],
+                    'registration_date': registration_date,
+                    'is_email_verified': user_data['is_email_verified'],
+                    'subscribed': False
+                },
+                # 'Message': 'User is not a subscriber',
+                "Message": "User found",
+            }
+
         # Generate a JWT token upon successful user validation
         payload = {
-            'username': username, #username is a email of the user's email
+            'username': username,  # username is the user's email
             'exp': datetime.datetime.utcnow() + datetime.timedelta(days=30),  # Token expiration time
-            'user_id':user_data['user_id']
+            'user_id': user_data['user_id']
         }
         token = jwt.encode(payload, "PortfolioOne", algorithm='HS256')
 
-        result = {
-            'status': 200,
-            'data': user_data,
-            'Message': 'User found and email verified',
-            'token': token
-        }
+        result['token'] = token
+
         return jsonify(result)
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+    finally:
+        cursor.close()
+        connection.close()
+
+
+
 
 
 @app.route('/api/RegisterUser', methods=['POST'])
@@ -279,7 +658,9 @@ def RegisterUser():
         email = data['email']
         mobile = data['mobile']
         password = data['password']  # Plain text password
-        organisation = data['organisation']
+        # organisation = data['organisation']
+        org_id = data.get('org_id')
+        role_id = data.get('role_id')
 
         # Create a database connection
         connection = mysql.connector.connect(
@@ -316,16 +697,24 @@ def RegisterUser():
         if existing_user_email or existing_user_mobile:
             result = {
                 'status': 400,
-                'Message': 'User already exists'
+                'Message': 'User already exists with the same email or mobile no.'
             }
         else:
             # Create a salt and hash the password
             # salt = bcrypt.gensalt()
             # hashed_password = bcrypt.hashpw(password.encode('utf-8'), salt)
 
-            insert_query = "INSERT INTO user_details (fullname, email, mobile, password, organisation) VALUES (%s, %s, %s, %s, %s)"
-            insert_data = (name, email, mobile, password, organisation)  # Store the hashed password
+            insert_query = "INSERT INTO user_details (fullname, email, mobile, password, org_id,role_id) VALUES (%s, %s, %s, %s, %s, %s)"
+            insert_data = (name, email, mobile, password, org_id,role_id)  # Store the hashed password
             cursor.execute(insert_query, insert_data)
+                    # Get the user_id of the newly inserted user
+            user_id = cursor.lastrowid
+
+            # Insert into user_headcount with default values
+            insert_headcount_query = "INSERT INTO user_headcount (user_id) VALUES (%s)"
+            cursor.execute(insert_headcount_query, (user_id,))
+
+
             connection.commit()
             
             # Generate token with no expiry containing the email for email verification
@@ -535,6 +924,33 @@ h2 {{
 </html>
 '''
             mail.send(message)
+            # Fetch all admins' email addresses associated with the organization
+            organisation_id = data.get('org_id')
+            if not organisation_id:
+                print(organisation_id)
+                organisation_id= 1
+            admin_query = "SELECT email FROM user_details WHERE org_id = %s AND role_id = 3"
+            cursor.execute(admin_query, (organisation_id,))
+            admin_emails = [admin['email'] for admin in cursor.fetchall()]
+
+            # Send email notification to all admins
+            for admin_email in admin_emails:
+                # Construct email message
+                message = Message(subject='New User Signup Notification',
+                                  recipients=[admin_email])
+                message.html = f'''
+                    <p>Hello Admin,</p>
+                    <p>A new user has signed up in your organization.</p>
+                    <p>Details of the new user:</p>
+                    <ul>
+                        <li>Name: {name}</li>
+                        <li>Email: {email}</li>
+                        <li>Mobile: {mobile}</li>
+                    </ul>
+                    <p>Please take appropriate actions.</p>
+                    <p>Regards,<br>Your Application Team</p>
+                '''
+                mail.send(message)
 
 
             result = {
@@ -645,7 +1061,7 @@ def addNewLeaseData():
 
         # Access the 'user_id' from the decoded token
         user_id = decoded_token.get('user_id')
-        data['user_id'] = user_id 
+        data['user_id'] = user_id   
         
 
         # Create a database connection
@@ -723,7 +1139,7 @@ def updateLeaseData(lease_id):
         cursor.execute(query_check, (lease_id,))
         existing_record = cursor.fetchone()
         # return jsonify(existing_record)
-        print(existing_record)
+        # print(existing_record)
 
         if not existing_record:
             result = {
@@ -978,12 +1394,19 @@ def check_email_verification():
 
         query_check_email = "SELECT is_email_verified FROM user_details WHERE email = %s"
         cursor.execute(query_check_email, (email_to_check,))
-        existing_email = cursor.fetchone()
-
-        if not existing_email:
-            return jsonify({'Message': 'Email not found in our records','status': 404}), 404
+        checkEmail = cursor.fetchone()
+        existing_email = None
+        if checkEmail:
+          existing_email = checkEmail['is_email_verified']
         else:
-            return jsonify({'Message': 'Email found in our records', 'status': 200}), 200
+          return jsonify({'Message': 'Email not found in our records','status': 404})
+        
+        
+        # print('existing_email', existing_email)
+        if not existing_email:
+            return jsonify({'Message': 'Email found in our records but unverified','status': 404})
+        else:
+            return jsonify({'Message': 'Email found in our records & verified', 'status': 200})
 
 
     except Exception as e:
@@ -1009,7 +1432,7 @@ def send_password_reset_email():
         query_check_email = "SELECT * FROM user_details WHERE email = %s"
         cursor.execute(query_check_email, (email,))
         existing_email = cursor.fetchone()
-        print(existing_email, "user existing")
+        # print(existing_email, "user existing")
         # return jsonify({'existing_email': existing_email['fullname']})
 
         cursor.close() 
@@ -1315,13 +1738,882 @@ def upload():
 
 
 
+@app.route('/api/feedback', methods=['POST'])
+@token_required
+def addFeedback():
+    try:
+        data = request.get_json()
+                # Validate the 'category' field
+        allowed_categories = ['Feature requests', 'Bug reports', 'Questions', 'Reviews', 'Others']
+        if 'category' not in data or data['category'] not in allowed_categories:
+            return jsonify({'error': 'Invalid or missing category'})
+
+        # # Generate a UUID for feedback
+        # generated_uuid = str(uuid.uuid4())
+
+        # # Update the data dictionary with the generated UUID
+        # data['id'] = generated_uuid
+
+        data['user_id'] = g.user['user_id']
+        
+        # return jsonify({'msg': g.user.user_id})
+
+        # Create a database connection
+        connection = mysql.connector.connect(
+            host=db_config['host'],
+            port=db_config['port'],
+            user=db_config['user'],
+            password=db_config['password'],
+            database=db_config['db']
+        )
+
+        if connection is None:
+            result = {
+                'status': 500,
+                'Message': 'Failed to connect to the database'
+            }
+            return jsonify(result)
+
+        cursor = connection.cursor(dictionary=True)
+
+        # Insert data into the database dynamically
+        try:
+            insert_fields = ', '.join(data.keys())
+            insert_values = ', '.join(['%s' for _ in data.values()])
+            query = f"INSERT INTO feedbacks ({insert_fields}) VALUES ({insert_values})"
+            insert_data = tuple(data.values())
+            cursor.execute(query, insert_data)
+            connection.commit()
+
+            result = {
+                'status': 200,
+                'Message': 'Feedback data inserted successfully'
+            }
+        except Exception as e:
+            result = {
+                'status': 500,
+                'Message': str(e)
+            }
+        finally:
+            cursor.close()
+            connection.close()
+
+        return jsonify(result)
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/feedbacks', methods=['GET'])
+def get_feedbacks():
+    try:
+        # Establish connection to the database
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor(dictionary=True)
+
+        # SQL query to fetch feedbacks with user and organization details
+        query = """
+            SELECT f.*, u.fullname AS user_name, u.mobile AS phone_number, 
+                   u.email, u.role_id, o.name AS org_name
+            FROM feedbacks f
+            LEFT JOIN user_details u ON f.user_id = u.user_id
+            LEFT JOIN organisation o ON u.org_id = o.id
+        """
+        cursor.execute(query)
+        feedbacks = cursor.fetchall()
+
+        # Close cursor and connection
+        cursor.close()
+        connection.close()
+
+        return jsonify({'data': feedbacks, 'status': 200, 'message':'Feedbacks retrived successfully'})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+ 
+# Your PayPal sandbox credentials
+PAYPAL_CLIENT_ID = "ATzX2fzuRpxCD_N3oJgY_JD82V6vVvmKnIeVuK63EKBdNbVz1wJD-6hubdvOljeI-kI-VvuVr0hsKeN-"
+PAYPAL_CLIENT_SECRET = "ELaiJVAy7n4T84kmKI6IStopS_GOzd82JjKD1-t54sup0BTjBczv7Y8QwuWkiQunsc7MggOeR3eVTkLj"
+PLAN_ID = "P-27310851BE4578012MWNZWRQ"
+
+
+base_url = "https://api-m.sandbox.paypal.com" #
+mode = "sandbox" #live
+
+# Parse post params sent in body in JSON format
+app.use_json = True
+
+def generate_access_token():
+    """Generates an OAuth 2.0 access token."""
+    auth_string = f"{PAYPAL_CLIENT_ID}:{PAYPAL_CLIENT_SECRET}"
+    encoded_auth = base64.b64encode(auth_string.encode("utf-8")).decode("utf-8")
+    headers = {"Authorization": f"Basic {encoded_auth}"}
+    response = requests.post(f"{base_url}/v1/oauth2/token", headers=headers, data="grant_type=client_credentials")
+    response.raise_for_status()
+    return response.json()["access_token"]
   
+def create_subscription(user_action="SUBSCRIBE_NOW"):
+    """Creates a subscription for the customer."""
+    url = f"{base_url}/v1/billing/subscriptions"
+    access_token = generate_access_token()
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {access_token}",
+        "Accept": "application/json",
+        "Prefer": "return=representation",
+    }
+    data = {"plan_id": PLAN_ID, "application_context": {"user_action": user_action}}
+    response = requests.post(url, headers=headers, json=data)
+    return response.json(), response.status_code
+  
+def handle_response(response):
+    try:
+        json_response = response.json()
+        return {"jsonResponse": json_response, "httpStatusCode": response.status_code}
+    except Exception as error:
+        error_message = response.text
+        raise Exception(error_message)
+
+
+@app.route("/api/paypal/create-subscription", methods=["POST"])
+@token_required
+def create_subscription_endpoint():
+    """Endpoint for creating a subscription."""
+    try:
+        from datetime import datetime
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor()
+        user_id = g.user['user_id']
+
+        # Check if the user already has an active subscription
+        check_subscription_query = "SELECT end_date, is_active FROM subscriptions WHERE user_id = %s AND is_active = 1"
+
+        cursor.execute(check_subscription_query, (user_id,))
+        subscription_data = cursor.fetchone()
+
+        if subscription_data:
+            end_date = subscription_data[0]
+            is_active = subscription_data[1]
+
+            # Check if the subscription is active and not expired
+            if is_active and end_date > datetime.now():
+                return jsonify({"error": "You already have an active subscription."})
+
+            # If the subscription is expired, mark it as inactive
+            if not is_active and end_date < datetime.now():
+                update_query = "UPDATE subscriptions SET is_active = 0 WHERE user_id = %s"
+                cursor.execute(update_query, (user_id,))
+                connection.commit()
+
+        # Create the new subscription
+        json_response, http_status_code = create_subscription()
+        subscription_id = json_response.get('id')
+
+        if subscription_id:
+            # Delete the previous subscription if it exists and end_date is NULL
+            delete_query = "DELETE FROM subscriptions WHERE user_id = %s AND end_date IS NULL"
+            cursor.execute(delete_query, (user_id,))
+
+            # Insert the new subscription  
+            insert_query = "INSERT INTO subscriptions (user_id, subscription_id, is_active) VALUES (%s, %s, 1)"
+            cursor.execute(insert_query, (user_id, subscription_id))
+            connection.commit()
+
+        return jsonify(json_response), http_status_code
+
+    except Exception as e:
+        print("Failed to create order:", e)
+        return jsonify({"error": "Failed to create order."}), 500
+
+    finally:
+        cursor.close()
+        connection.close()
+
+@app.route("/api/webhook/paypal", methods=["POST"])
+def paypal_webhook():
+    webhook_event = request.get_json()
+    print(webhook_event,"GOD KNOWS WHAT IS GOING ON")
+    handle_webhook_event(webhook_event)
+    return jsonify({"status": "Webhook received and processed"})
+
+def handle_webhook_event(event):
+    connection = None
+    cursor = None
+
+    try:
+        event_type = event["event_type"]
+        resource = event["resource"]
+        connection = mysql.connector.connect(
+            host=db_config['host'],
+            port=db_config['port'],
+            user=db_config['user'],
+            password=db_config['password'],
+            database=db_config['db']
+        )
+        cursor = connection.cursor(dictionary=True)
+        
+        if event_type == "PAYMENT.SALE.COMPLETED":
+            print(event_type, "YAHOOOOOOOOOOO AN EVENT")
+            subscription_id = resource["billing_agreement_id"]
+            print(subscription_id, "subscription_id")
+
+            # Check if the subscription already exists
+            subscription_query = "SELECT * FROM subscriptions WHERE subscription_id = %s"
+            cursor.execute(subscription_query, (subscription_id,))
+            existing_subscription = cursor.fetchone()
+            print(existing_subscription, 'existing_subscription')
+            
+            if existing_subscription:
+                # If the subscription exists, update the end_date if start_date is the same
+                if existing_subscription["start_date"]:
+                    update_query = "UPDATE subscriptions SET end_date = NOW() + INTERVAL 30 DAY WHERE subscription_id = %s"
+                    cursor.execute(update_query, (subscription_id,))
+                    print("UPDATE QUERY IS EXECUTED, ONLY END-DATE")
+                else:
+                    # Define the start_date and end_date based on current time and 30 days later
+                    from datetime import datetime, timedelta
+                    start_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                    end_date = (datetime.now() + timedelta(days=30)).strftime('%Y-%m-%d %H:%M:%S')
+
+                    # Update the start_date and end_date columns in the subscriptions table
+                    update_query = "UPDATE subscriptions SET start_date = %s, end_date = %s WHERE subscription_id = %s"
+                    cursor.execute(update_query, (start_date, end_date, subscription_id))
+
+                    print("UPDATE QUERY IS EXECUTED, BOTH START-DATE & END-DATE BOTH GETTING EXECUTED")
+            else:
+                print('THIS PART IS NOT HANDLED BY THE APP')
+                print(event_type, 'GOD IS TESTING & SEEING ALL')
+
+        else:
+            print("Ignoring non-subscription event:", event_type)
+
+        # Commit the changes to the database
+        if connection:
+            connection.commit()
+
+    except Exception as e:
+        print("Error handling webhook event:", str(e))
+    finally:
+        if cursor:
+            cursor.close()
+        if connection:
+            connection.close()
+
+# API to update role permissions
+@app.route('/api/updateRolePermissions', methods=['POST'])
+@token_required
+def updateRolePermissions():
+    try:
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor()
+
+        data = request.get_json()
+        role_id = data['roleId']
+        org_id = data['orgId']
+        permission_ids = data['permissionID']
+
+        # Delete existing role permissions
+        checkPermission = "SELECT * FROM role_permissions WHERE role_id = %s AND org_id = %s"
+        cursor.execute(checkPermission, (role_id, org_id))
+          # Fetch the result after executing the query
+        checkPermissionExist = cursor.fetchall()
+        if checkPermissionExist :
+            # Delete existing role permissions
+            delete_query = "DELETE FROM role_permissions WHERE role_id = %s AND org_id = %s"
+            cursor.execute(delete_query, (role_id, org_id))
+
+        # Insert new role permissions
+        insert_query = "INSERT INTO role_permissions (role_id, org_id, permission_id) VALUES (%s, %s, %s)"
+        for permission_id in permission_ids:
+            cursor.execute(insert_query, (role_id, org_id, permission_id))
+
+        connection.commit()
+
+        result = {
+            'status': 200,
+            'Message': 'Role permissions updated successfully'
+        }
+        return jsonify(result)
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+    finally:
+        cursor.close()
+        connection.close()
+
+
+# API to get permissions
+@app.route('/api/getPermissions', methods=['GET'])
+@token_required
+def getPermissions():
+    try:
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor(dictionary=True)
+
+        cursor.execute("SELECT * FROM permissions")
+        permissions = cursor.fetchall()
+
+        result = {
+            'status': 200,
+            'data': permissions,
+            'Message': 'Permissions retrieved successfully'
+        }
+        return jsonify(result)
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+    finally:
+        cursor.close()
+        connection.close()
+
+        
+# API to get roles
+@app.route('/api/getRoles', methods=['GET'])
+@token_required
+def getRoles():
+    try:
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor(dictionary=True)
+
+        cursor.execute("SELECT * FROM user_roles")
+        roles = cursor.fetchall()
+
+        result = {
+            'status': 200,
+            'data': roles,
+            'Message': 'Roles retrieved successfully'
+        }
+        return jsonify(result)
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+    finally:
+        cursor.close()
+        connection.close()
+
+@app.route('/api/rolesHierarchy/<int:role_id>', methods=['GET'])
+@token_required
+def get_roles_hierarchy(role_id):
+    try:
+        # Establish connection to the database
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor(dictionary=True)
+
+        # Recursive SQL query to fetch roles and their hierarchy based on the provided role_id
+        query = f"""
+            WITH RECURSIVE RoleHierarchy AS (
+                SELECT role_id, role_name, parent_role_id
+                FROM user_roles
+                WHERE role_id = {role_id} -- Start with the provided role_id
+                UNION ALL
+                SELECT r.role_id, r.role_name, r.parent_role_id
+                FROM user_roles r
+                JOIN RoleHierarchy rh ON r.parent_role_id = rh.role_id
+            )
+            SELECT * FROM RoleHierarchy;
+        """
+
+        cursor.execute(query)
+        roles_hierarchy = cursor.fetchall()
+
+        return jsonify({'Message': f'Roles hierarchy under role {role_id} retrieved successfully', 'data': roles_hierarchy}), 200
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+
+
+# Function to fetch permissions based on org_id
+@app.route('/api/getPermissionsByOrgId/<int:org_id>', methods=['GET'])
+@token_required
+def get_permissions_by_org_id(org_id):
+    try:
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor(dictionary=True)
+
+        # SQL query to fetch permissions based on org_id
+        query = "SELECT role_id, GROUP_CONCAT(permission_id) AS permission_ids FROM role_permissions WHERE org_id = %s GROUP BY role_id"
+        cursor.execute(query, (org_id,))
+        permissions = cursor.fetchall()
+
+        formatted_permissions = []
+        for permission in permissions:
+            formatted_permission = {
+                'org_id': org_id,
+                'role_id': permission['role_id'],
+                'permission_ids': [int(id) for id in permission['permission_ids'].split(',')]
+            }
+            formatted_permissions.append(formatted_permission)
+
+        return {'data': formatted_permissions, 'status': 200}
+
+    except Error as e:
+        return jsonify({'error': str(e)}), 500
+
+    finally:
+        if connection.is_connected():
+            cursor.close()
+            connection.close()
+
+
+
+@app.route('/api/updateUserHeadcount/<int:user_id>', methods=['PUT'])
+@token_required
+def update_user_headcount(user_id):
+    try:
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor()
+
+        data = request.get_json()
+        user_id = g.user['user_id']
+        headcount_values = data
+        
+        if g.user['user_id'] != user_id:
+          return jsonify({'msg': 'User is not authorized'})
+
+        # Update headcount values for the specified user
+        update_query = "UPDATE user_headcount SET headcount1 = %s, headcount2 = %s, headcount3 = %s, headcount4 = %s WHERE user_id = %s"
+        cursor.execute(update_query, (headcount_values['headcount1'], headcount_values['headcount2'], headcount_values['headcount3'], headcount_values['headcount4'], user_id))
+
+        connection.commit()
+
+        result = {
+            'status': 200,
+            'Message': 'User headcount updated successfully'
+        }
+        return jsonify(result)
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+    finally:
+        cursor.close()
+        connection.close()
+
+@app.route('/api/getUserHeadcount/<int:user_id>', methods=['GET'])
+@token_required
+def get_user_headcount(user_id):
+    try:
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor(dictionary=True)
+        if g.user['user_id'] != user_id:
+          return jsonify({'msg': 'User is not authorized'})
+
+        # Retrieve headcount values for the specified user
+        select_query = "SELECT * FROM user_headcount WHERE user_id = %s"
+        cursor.execute(select_query, (user_id,))
+        user_headcount = cursor.fetchone()
+
+
+        if user_headcount:
+            result = {
+                'status': 200,
+                'data': user_headcount,
+                'Message': 'User headcount retrieved successfully'
+            }
+        else:
+            result = {
+                'status': 404,
+                'data': {},
+                'Message': 'User headcount not found'
+            }
+
+        return jsonify(result)
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+    finally:
+        cursor.close()
+        connection.close()
+
+
+@app.route('/api/addOrganization', methods=['POST'])
+def add_organization():
+    try:
+        # Establish connection to the database
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor()
+
+        # Get organization details from request body
+        data = request.get_json()
+        name = data.get('name')
+
+        # Execute SQL query to check if organization already exists
+        check_query = "SELECT COUNT(*) FROM organisation WHERE LOWER(name) = LOWER(%s)"
+        cursor.execute(check_query, (name,))
+        count = cursor.fetchone()[0]
+
+        if count > 0:
+            return jsonify({'message': 'Organization name already exists', 'status': 400})
+
+        # Execute SQL query to insert organization into the database
+        insert_query = "INSERT INTO organisation (name) VALUES (%s)"
+        cursor.execute(insert_query, (name,))
+
+        # Get the ID of the newly added organization
+        organization_id = cursor.lastrowid
+
+        # Fetch all roles from the user_roles table
+        get_roles_query = "SELECT role_id FROM user_roles"
+        cursor.execute(get_roles_query)
+        roles = cursor.fetchall()
+
+        # Fetch all permissions from the permissions table
+        get_permissions_query = "SELECT permission_id FROM permissions"
+        cursor.execute(get_permissions_query)
+        permissions = cursor.fetchall()
+
+        # Grant all permissions to all roles for the new organization
+        
+        for role in roles:
+            role_id = role[0]
+            for permission in permissions:
+                permission_id = permission[0]
+                assign_permissions_query = "INSERT INTO role_permissions (role_id, org_id, permission_id) VALUES (%s, %s, %s)"
+                cursor.execute(assign_permissions_query, (role_id, organization_id, permission_id))
+
+        # Commit changes to the database
+        connection.commit()
+
+        return jsonify({'message': 'Organization added successfully', 'status': 200,'id':organization_id, 'name': name}), 200
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+    finally:
+        # Close cursor and connection
+        if 'connection' in locals() and connection.is_connected():
+            cursor.close()
+            connection.close()
+
+
+
+# API to get all organizations
+@app.route('/api/getOrganizations', methods=['GET'])
+def get_organizations():
+    try:
+        # Establish connection to the database
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor(dictionary=True)
+
+        # Execute SQL query to fetch all organizations
+        select_query = "SELECT * FROM organisation"
+        cursor.execute(select_query)
+        organizations = cursor.fetchall()
+
+        return jsonify({'data': organizations,'status':200, 'message':'Organisations successfully retrieved'}), 200
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+    finally:
+        # Close cursor and connection
+        if 'connection' in locals() and connection.is_connected():
+            cursor.close()
+            connection.close()
+
+
+@app.route('/api/deleteUser/<int:user_id>', methods=['PATCH'])
+@token_required
+def delete_user(user_id):
+    try:
+        # Establish connection to the database
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor(dictionary=True)
+        if g.user['user_id'] != user_id:
+          return jsonify({'msg': 'User is not authorized'})
+        # Update the is_deleted flag for the user
+        update_query = "UPDATE user_details SET is_deleted = TRUE WHERE user_id = %s"
+        cursor.execute(update_query, (user_id,))
+
+        # Commit the changes
+        connection.commit()
+
+        # Return success message
+        return jsonify({'message': 'User deleted successfully', 'status': 200}), 200
+
+    except Exception as e:
+        # Rollback the transaction and return error message
+        connection.rollback()
+        return jsonify({'error': str(e)}), 500
+
+    finally:
+        # Close the cursor and connection
+        cursor.close()
+        connection.close()
+
+
+@app.route('/api/getUsersByOrgId/<int:org_id>', methods=['GET'])
+@token_required
+def get_users_by_org_id(org_id):
+    try:
+        # Establish connection to the database
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor(dictionary=True)
+
+        # Execute SQL query to fetch users based on org_id
+        query = """
+            SELECT u.user_id, u.fullname, u.email, u.mobile, o.name AS organisation, r.role_name,u.created_at,u.is_deleted,u.is_email_verified, u.reports_to, u.user_id,u.org_id, u.role_id
+            FROM user_details u
+            LEFT JOIN organisation o ON u.org_id = o.id
+            LEFT JOIN user_roles r ON u.role_id = r.role_id
+            WHERE u.org_id = %s AND u.is_deleted = FALSE AND u.is_email_verified = TRUE
+        """
+        cursor.execute(query, (org_id,))
+        users = cursor.fetchall()
+
+        return jsonify({'users': users, 'status': 200}), 200
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+    finally:
+        # Close cursor and connection
+        if 'connection' in locals() and connection.is_connected():
+            cursor.close()
+            connection.close()
+
+# API endpoint to update reports_to for multiple users
+@app.route('/api/updateReportsTo', methods=['PUT'])
+def update_reports_to():
+    try:
+        # Establish database connection
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor()
+
+        # Get data from request body
+        data = request.get_json()
+
+        # Iterate through the data and update reports_to for each user
+        for user_data in data:
+            print(user_data)
+            user_id = user_data.get('user_id')
+            reports_to = user_data.get('reports_to')
+            print(user_id, reports_to)
+
+            # Execute SQL query to update reports_to for the user
+            update_query = "UPDATE user_details SET reports_to = %s WHERE user_id = %s"
+            cursor.execute(update_query, (reports_to, user_id))
+
+        # Commit changes to the database
+        connection.commit()
+
+        # Close cursor and connection
+        cursor.close()
+        connection.close()
+        return jsonify({'message': 'Reports_to updated successfully'}), 200
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/getUsersByManager/<int:user_id>', methods=['GET'])
+@token_required
+def get_users_by_manager(user_id):
+    try:
+        # Establish connection to the database
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor(dictionary=True)
+
+        # Fetch users who report to the specified manager with organization and role details
+        query = """
+            SELECT u.user_id, u.fullname, u.email, u.mobile, 
+                   o.name AS organisation, o.id AS org_id,
+                   r.role_name, r.role_id,
+                   u.created_at, u.is_deleted, u.is_email_verified, u.reports_to
+            FROM user_details u
+            LEFT JOIN organisation o ON u.org_id = o.id
+            LEFT JOIN user_roles r ON u.role_id = r.role_id
+            WHERE u.reports_to = %s AND u.is_deleted = 0
+        """
+        cursor.execute(query, (user_id,))
+        users = cursor.fetchall()
+
+        return jsonify({'users': users}), 200
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+    finally:
+        if 'connection' in locals() and connection.is_connected():
+            cursor.close()
+            connection.close()
+
+
+
+@app.route('/api/users/verified', methods=['GET'])
+def get_verified_users():
+    try:
+        # Establish database connection
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor(dictionary=True)
+
+        # SQL query to fetch users with verified email and additional details
+        query = """
+            SELECT u.user_id, u.fullname, u.email, u.mobile, 
+                   o.name AS organisation, o.id AS org_id,
+                   r.role_name, r.role_id,
+                   u.created_at, u.is_deleted, u.is_email_verified, u.reports_to
+            FROM user_details u
+            LEFT JOIN organisation o ON u.org_id = o.id
+            LEFT JOIN user_roles r ON u.role_id = r.role_id
+            WHERE u.is_email_verified = TRUE AND u.is_deleted = FALSE
+        """
+        cursor.execute(query)
+        verified_users = cursor.fetchall()
+
+        # Close cursor and connection
+        cursor.close()
+        connection.close()
+
+        return jsonify({'users': verified_users, 'status': 200, 'message': "All Verified Users Successfully retrieved"})
+
+    except Error as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/getNotAssignedUsers/<int:org_id>', methods=['GET'])
+@token_required
+def get_not_assigned_users(org_id):
+    try:
+        # Establish connection to the database
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor(dictionary=True)
+
+        # Fetch users who are not assigned to any manager, excluding superadmins and admins
+        query = """
+            SELECT u.user_id, u.fullname, u.email, u.mobile, 
+                   o.name AS organisation, o.id AS org_id,
+                   r.role_name, r.role_id,
+                   u.created_at, u.is_deleted, u.is_email_verified, u.reports_to
+            FROM user_details u
+            LEFT JOIN organisation o ON u.org_id = o.id
+            LEFT JOIN user_roles r ON u.role_id = r.role_id
+            WHERE u.reports_to IS NULL AND u.is_deleted = 0
+            AND u.role_id NOT IN (1, 3)  -- Exclude superadmins (role_id=1) and admins (role_id=6)
+            AND u.org_id = %s
+        """
+        cursor.execute(query, (org_id,))
+        not_assigned_users = cursor.fetchall()
+
+        return jsonify({'users': not_assigned_users,'status':200,'message':'Not assigned users retrived successfully'}), 200
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+    finally:
+        if 'connection' in locals() and connection.is_connected():
+            cursor.close()
+            connection.close()
+
+
+@app.route('/api/updateUserRole/<int:user_id>', methods=['PUT'])
+@token_required
+def update_user_role(user_id):
+    try:
+        # Establish connection to the database
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor()
+
+        # Get new role_id from request body
+        data = request.get_json()
+        new_role_id = data.get('new_role_id')
+
+        # Update user's role in the database
+        update_query = "UPDATE user_details SET role_id = %s WHERE user_id = %s"
+        cursor.execute(update_query, (new_role_id, user_id))
+
+        # Commit changes to the database
+        connection.commit()
+
+        return jsonify({'message': 'User role updated successfully','status': 200}), 200
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+    finally:
+        if 'connection' in locals() and connection.is_connected():
+            cursor.close()
+            connection.close()
+
+
+
+
+def get_users_below(user_id):
+    try:
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor(dictionary=True)
+
+        # Get all users reporting to the specified user
+        query = "SELECT * FROM user_details WHERE reports_to = %s"
+        cursor.execute(query, (user_id,))
+        direct_reports = cursor.fetchall()
+
+        # Recursively fetch users reporting to direct reports
+        users_below = []
+        for report in direct_reports:
+            users_below.append(report)
+            users_below += get_users_below(report['user_id'])
+
+        return users_below
+
+    except Exception as e:
+        raise e
+
+    finally:
+        if connection.is_connected():
+            cursor.close()
+            connection.close()
+
+# @app.route('/api/usersBelow/<int:user_id>', methods=['GET'])
+# def get_users_below_user(user_id):
+#     try:
+#         users_below = get_users_below(user_id)
+#         return jsonify(users_below), 200
+
+#     except Exception as e:
+#         return jsonify({'error': str(e)}), 500
+
+# The below code is more efficent than the 
+# API endpoint to fetch employee hierarchy
+@app.route('/api/usersBelow/<int:user_id>', methods=['GET'])
+def get_employee_hierarchy(user_id):
+    try:
+        # Establish connection to the database
+        connection = mysql.connector.connect(**db_config)
+        cursor = connection.cursor(dictionary=True)
+
+        # SQL query to fetch employee hierarchy
+        query = """
+            WITH RECURSIVE EmployeeHierarchy AS (
+                SELECT user_id, fullname, reports_to
+                FROM user_details
+                WHERE user_id = %s
+              UNION ALL
+                SELECT e.user_id, e.fullname, e.reports_to
+                FROM user_details e
+                JOIN EmployeeHierarchy eh ON e.reports_to = eh.user_id
+            )
+            SELECT * FROM EmployeeHierarchy;
+        """
+
+        # Execute SQL query with the specified user_id
+        cursor.execute(query, (user_id,))
+        employee_hierarchy = cursor.fetchall()
+
+        # Return hierarchical employee data as JSON response
+        return jsonify({'employee_hierarchy': employee_hierarchy}), 200
+
+    except mysql.connector.Error as e:
+        return jsonify({'error': str(e)}), 500
+
+    finally:
+        # Close cursor and connection
+        if connection.is_connected():
+            cursor.close()
+            connection.close()
+            
+            
+
 
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
-    
-    
-    
-    
+    app.run(debug=True, host='0.0.0.0')	

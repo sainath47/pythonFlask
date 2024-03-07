@@ -22,7 +22,7 @@ select * from countries;
 
 describe lease_data ;
 select * from lease_data;
-select * from lease_data where user_id="28";
+select * from lease_data where user_id="10";
 
 describe feedbacks;
 select * from feedbacks;
@@ -31,7 +31,7 @@ describe subscriptions;
 select * from subscriptions;
 
 INSERT INTO subscriptions (user_id, subscription_id, start_date, end_date)
-VALUES ('99', 'your_random_subscription_id', NOW(), MAKEDATE(YEAR(NOW()) + 1, 1) - INTERVAL 1 DAY);
+VALUES ('194', 'unique_id', NOW(), MAKEDATE(YEAR(NOW()) + 1, 1) - INTERVAL 1 DAY);
 
 DELETE FROM subscriptions where user_id=99;
 
@@ -368,3 +368,150 @@ INSERT INTO organisation (name) VALUES ('others', 6 );
 INSERT INTO user_roles (role_name, parent_role_id) VALUES ('others', 6 );
 
 
+select * from lease_data;
+    
+    
+    
+    
+    
+    INSERT INTO lease_data (
+    user_id, 
+   lease_id, 
+    site_id, 
+    status, 
+    document_type, 
+    building, 
+    address, 
+    floor, 
+    city, 
+    state_district_province, 
+    country_code, 
+    country_name, 
+    sub_region, 
+    region, 
+    postal_code, 
+    latitude, 
+    longitude, 
+    space_use, 
+    business_unit, 
+    rentable_sf, 
+    annualized_base_rent, 
+    additional_facilities_cost, 
+    facilities_cost_fully_loaded, 
+    capacity_seats, 
+    parking_capacity, 
+    vacant, 
+    total_employee_hc, 
+    total_occupancy_hc, 
+    surplus_deficit_seat_capacity, 
+    sf_employee, 
+    sf_occupant, 
+    sf_seat, 
+    cost_sf_1, 
+    cost_employee, 
+    cost_occupant, 
+    cost_seat, 
+    cost_sf, 
+    revenues, 
+    sga, 
+    opex_total_revenues, 
+    opex_sga, 
+    legacy_company, 
+    verified_yn, 
+    lease_type, 
+    leased_owned, 
+    client_position, 
+    lease_commencement_date, 
+    lease_expiration_date, 
+    lease_expiration_year, 
+    rmo_months, 
+    critical_decision_date, 
+    strategy_type, 
+    strategy_real_estate_initiative, 
+    strategy_optional_committed_or_na, 
+    strategy_reduction_addition_or_as_is, 
+    strategy_year_of_change_yyyy, 
+    strategy_quarter_of_change, 
+    strategy_head_count_adjustment_in_year_of_change, 
+    strategy_seat_count_adjustment_in_year_of_change, 
+    strategy_square_foot_adjustment_in_year_of_change, 
+    strategy_occupancy_adjustment_in_year_of_change, 
+    strategy_notes, 
+    strategy_top_opportunities, 
+    created_at, 
+    updated_at, 
+    is_deleted
+)
+SELECT 
+    164, 
+   UUID(),
+    site_id, 
+    status, 
+    document_type, 
+    building, 
+    address, 
+    floor, 
+    city, 
+    state_district_province, 
+    country_code, 
+    country_name, 
+    sub_region, 
+    region, 
+    postal_code, 
+    latitude, 
+    longitude, 
+    space_use, 
+    business_unit, 
+    rentable_sf, 
+    annualized_base_rent, 
+    additional_facilities_cost, 
+    facilities_cost_fully_loaded, 
+    capacity_seats, 
+    parking_capacity, 
+    vacant, 
+    total_employee_hc, 
+    total_occupancy_hc, 
+    surplus_deficit_seat_capacity, 
+    sf_employee, 
+    sf_occupant, 
+    sf_seat, 
+    cost_sf_1, 
+    cost_employee, 
+    cost_occupant, 
+    cost_seat, 
+    cost_sf, 
+    revenues, 
+    sga, 
+    opex_total_revenues, 
+    opex_sga, 
+    legacy_company, 
+    verified_yn, 
+    lease_type, 
+    leased_owned, 
+    client_position, 
+    lease_commencement_date, 
+    lease_expiration_date, 
+    lease_expiration_year, 
+    rmo_months, 
+    critical_decision_date, 
+    strategy_type, 
+    strategy_real_estate_initiative, 
+    strategy_optional_committed_or_na, 
+    strategy_reduction_addition_or_as_is, 
+    strategy_year_of_change_yyyy, 
+    strategy_quarter_of_change, 
+    strategy_head_count_adjustment_in_year_of_change, 
+    strategy_seat_count_adjustment_in_year_of_change, 
+    strategy_square_foot_adjustment_in_year_of_change, 
+    strategy_occupancy_adjustment_in_year_of_change, 
+    strategy_notes, 
+    strategy_top_opportunities, 
+    NOW() AS created_at, 
+    NOW() AS updated_at,
+    is_deleted
+FROM 
+    lease_data
+WHERE 
+    user_id = 10;
+
+select * from lease_data where user_id = 164;
